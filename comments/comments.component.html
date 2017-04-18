@@ -1,0 +1,140 @@
+     <div class="container">
+       <div *ngIf="selectedComment" class="selectedComment">
+        <div class="row">
+          <div class="card text-xs-center">
+				    <div class="card-block">
+             <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedComment.DriveDate}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedComment.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedComment.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedComment.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedComment.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                <label>PO: </label>
+                <input [(ngModel)]="selectedComment.PODid" placeholder="PO"/>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>RideId: </label>
+                <input [(ngModel)]="selectedComment.RideId" placeholder="RideId"/>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>RidePid: </label>
+                <input [(ngModel)]="selectedComment.RidePid" placeholder="RidePid"/>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>RideDate: </label>
+                <input [(ngModel)]="selectedComment.RideDate" placeholder="RideDate"/>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>RideTime: </label>
+                <input [(ngModel)]="selectedComment.RideTime" placeholder="RideTime"/>
+                </fieldset>
+                <fieldset class="form-group">
+                <label>RideToName: </label>
+                <input [(ngModel)]="selectedComment.RideToName" placeholder="RideToName"/>
+                </fieldset>
+              <fieldset class="form-group">
+                <label>RideFromName: </label>
+                <input [(ngModel)]="selectedComment.RideFromName" placeholder="RideFromName"/>
+            </fieldset>
+              <fieldset class="form-group">
+                <label>RideScore: </label>
+                <input [(ngModel)]="selectedComment.RideScore" placeholder="RideScore"/>
+              </fieldset> 
+              <fieldset class="form-group">
+                <label>RideComments: </label>
+                <input [(ngModel)]="selectedComment.RideComments" placeholder="RideComments"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveId: </label>
+                <input [(ngModel)]="selectedComment.DriveId" placeholder="DriveId"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DrivePid: </label>
+                <input [(ngModel)]="selectedComment.DrivePid" placeholder="DrivePid"/>
+            </fieldset>
+              <fieldset class="form-group">
+                <label>DriveDate: </label>
+                <input [(ngModel)]="selectedComment.DriveDate" placeholder="DriveDate"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveTime: </label>
+                <input [(ngModel)]="selectedComment.DriveTime" placeholder="DriveTime"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveToName: </label>
+                <input [(ngModel)]="selectedComment.DriveToName" placeholder="DriveToName"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveFromName: </label>
+                <input [(ngModel)]="selectedComment.DriveFromName" placeholder="DriveFromName"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveScore: </label>
+                <input [(ngModel)]="selectedComment.DriveScore" placeholder="DriveScore"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>DriveComments: </label>
+                <input [(ngModel)]="selectedComment.DriveComments" placeholder="DriveComments"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Charge: </label>
+                <input [(ngModel)]="selectedComment.Charge" placeholder="Charge"/>
+              </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View Comment</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+   <div *ngIf!="selectedComment">
+          <div class="row">
+            <div class="card text-xs-center">
+                <div class="card-block">
+                  <label>Search by UserId or Date:</label><input #CommentSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Name" />
+                </div>
+<div class="table-responsive">
+                   <table class="table">
+                      <tbody>
+	  <tr *ngFor="let comment of comments" (click)="onSelect(comment)"
+      [class.selected]="comment === selectedComment"  class="list-group-item">
+      <div *ngIf!="appservice.admin">
+        <td class="Id"><b>{{comment.Id}}</b></td> 
+				<td class="Id">{{comment.DFC| date}}</td>
+				<td class="Id">{{comment.DLC | date}}</td>
+				<td class="Id">{{comment.User}}</td>
+				<td class="Id">{{comment.PO}}</td> 
+				<td class="Id">{{comment.RideId}}</td> 
+				<td class="Id">{{comment.RidePid}}</td> 
+				<td class="Id">{{comment.RideDate| date}}</td> 
+				<td class="Id">{{comment.RideTime}}</td>
+				<td class="Id">{{comment.RideToName}}</td> 
+				<td class="Id">{{comment.RideFromName}}</td> 
+				<td class="Id">{{comment.RideScore}}</td> 
+				<td class="Id">{{comment.RideComments}}</td> 
+        </div>
+         <div *ngIf="appservice.admin">
+        <td class="Id"><b>{{comment.Id}}</b></td> 
+				<td class="Id">{{comment.DrivePid}}</td> 
+				<td class="Id">{{comment.DriveDate | date}}</td> 
+				<td class="Id">{{comment.DriveTime}}</td> 
+				<td class="Id">{{comment.DriveToName}}</td> 
+				<td class="Id">{{comment.DriveFromName}}</td> 
+				<td class="Id">{{comment.DriveScore}}</td> 
+				<td class="Id">{{comment.DriveComments}}</td> 
+				<td class="Id">{{comment.Charge}}</td> 
+     <td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td>
+                    </div>
+              </tr>
+        </tbody>
+    </table>
+</div></div></div></div>
+

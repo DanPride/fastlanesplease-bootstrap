@@ -1,0 +1,148 @@
+
+<div class="container">	
+    <div *ngIf="selectedOutput" class="selectedOutput">
+       <div class="row">
+             <div class="card text-xs-center">
+		  <div class="card-block">
+		        <div class="card-header">
+                                <fieldset class="form-group  col-md-12">
+                                {{selectedOutput.OutputType}}
+                                </fieldset>
+                                <fieldset class="form-group col-md-3">
+                                        {{selectedOutput.Id}} 
+                                </fieldset>
+                                <fieldset class="form-group col-md-3">
+                                        {{selectedOutput.DFC | date}} 
+                                </fieldset>
+                                <fieldset class="form-group col-md-3">
+                                        {{selectedOutput.DLC | date}} 
+                                </fieldset>
+                                <fieldset class="form-group col-md-3">
+                                        {{selectedOutput.User}}
+                                </fieldset>
+                                <fieldset class="form-group  col-md-12">
+                                <label>Admin: </label>
+                                <input [(ngModel)]="selectedOutput.Admin" placeholder="Admin"/>
+                                </fieldset>
+                                <fieldset class="form-group  col-md-12">
+                                <label>Did: </label>
+                                <input [(ngModel)]="selectedOutput.Did" placeholder="Did" />
+                                </fieldset>
+                                <fieldset class="form-group  col-md-12">
+                                        <label>Pid: </label>
+                                        <input [(ngModel)]="selectedOutput.Pid" placeholder="Pid" />
+                                </fieldset>
+                                <fieldset class="form-group  col-md-12">
+                                        <label>PidDFC: </label>
+                                        <input [(ngModel)]="selectedOutput.PidDFC" placeholder="PidDFC">
+                                </fieldset>
+                                <fieldset class="form-group  col-md-12">
+                                        <label>OutputType: </label>
+                                        <input [(ngModel)]="selectedOutput.OutputType" placeholder="OutputType" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>Trys: </label>
+                                        <input [(ngModel)]="selectedOutput.Trys" placeholder="Trys" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>Sent: </label>
+                                        <input [(ngModel)]="selectedOutput.Sent" placeholder="Sent" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>Delay: </label>
+                                        <input [(ngModel)]="selectedOutput.Delay" placeholder="Delay" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>Email: </label>
+                                        <input [(ngModel)]="selectedOutput.Email" placeholder="Email" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>MatchPid: </label>
+                                        <input [(ngModel)]="selectedOutput.MatchPid" placeholder="MatchPid" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>TripDate: </label>
+                                        <input [(ngModel)]="selectedOutput.TripDate" placeholder="TripDate" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>FromName: </label>
+                                        <input [(ngModel)]="selectedOutput.FromName" placeholder="FromName" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>ToName: </label>
+                                        <input [(ngModel)]="selectedOutput.ToName" placeholder="ToName" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>CellDom: </label>
+                                        <input [(ngModel)]="selectedOutput.CellDom" placeholder="CellDom" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>M_Phone: </label>
+                                        <input [(ngModel)]="selectedOutput.M_Phone" placeholder="M_Phone" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>RunId: </label>
+                                        <input [(ngModel)]="selectedOutput.RunId" placeholder="RunId" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>CellValid: </label>
+                                        <input [(ngModel)]="selectedOutput.CellValid" placeholder="CellValid" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>RD: </label>
+                                        <input [(ngModel)]="selectedOutput.RD" placeholder="RD" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>RDId: </label>
+                                        <input [(ngModel)]="selectedOutput.RDId" placeholder="RDId" />
+                                </fieldset>
+                                <fieldset  class="form-group  col-md-12">
+                                        <label>RDDFC: </label>
+                                        <input [(ngModel)]="selectedOutput.RDDFC" placeholder="RDDFC" />
+                                </fieldset>
+                                <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+                                <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+        </div></div></div></div></div>
+<div *ngIf!="selectedOutput">
+  <div class="row">
+    <div class="card text-xs-center">
+        <div class="card-block">
+        <label>Search by UserId or Output:</label> <input #outputSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+        <button class="btn btn-danger" (click)="add(outputSearch.value)"> Add </button>
+        </div>
+           <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+             <tr *ngFor="let output of outputs" (click)="onSelect(output)"
+               [class.selected]="output === selectedOutput" class="list-group-item">
+                        <td class="Id">{{output.Id}}</td>
+                        <td class="Id">{{output.DFC | date}}</td> 
+                        <td class="Id">{{output.DLC | date}}</td>
+                        <td class="Id">{{output.User}}</td>
+                        <td class="Id">{{output.Admin}}</td>
+                        <td class="Id">{{output.Did}}</td> 
+                        <td class="Id">{{output.Pid}}</td> 
+                        <td class="Id">{{output.Lang}}</td>
+                        <td class="Id">{{output.PidDFC}}</td>
+                        <td class="Id">{{output.OutputType}}</td> 
+                        <td class="Id">{{output.Trys}}</td> 
+                        <td class="Id">{{output.Sent}}</td> 
+                        <td class="Id">{{output.Delay}}</td>
+                        <td class="Id">{{output.Email}}</td>
+                        <td class="Id">{{output.MatchPid}}</td>
+                        <td class="Id">{{output.TripDate}}</td>
+                        <td class="Id">{{output.FromName}}</td>
+                        <td class="Id">{{output.ToName}}</td>
+                        <td class="Id">{{output.CellDom}}</td>
+                        <td class="Id">{{output.M_Phone}}</td>
+                        <td class="Id">{{output.RunId}}</td>
+                        <td class="Id">{{output.CellValid}}</td>
+                        <td class="Id">{{output.RD}}</td>
+                        <td class="Id">{{output.RDId}}</td>
+                        <td class="Id">{{output.RDDFC }}</td>
+              <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>

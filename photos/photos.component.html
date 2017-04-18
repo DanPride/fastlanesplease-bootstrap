@@ -1,0 +1,23 @@
+<p>
+  photos list!
+</p>
+
+<ul class="photos">
+  <li *ngFor="let photo of photos" (click)="onSelect(photo)"
+      [class.selected]="photo === selectedPhoto">
+    <span class="badge">{{photo.Id}}</span>
+    <span>
+          {{photo.Id}} 
+          {{photo.DFC}} 
+          {{photo.DLC}} 
+          {{photo.User}} 
+          {{photo.Pid}} 
+          {{photo.FileName}} 
+          {{photo.Type}} 
+          {{photo.Size}} 
+          {{photo.Caption}}  
+      </span>
+    <button class="delete"
+      (click)="delete(photo); $event.stopPropagation()">x</button>
+  </li>
+</ul>

@@ -1,0 +1,93 @@
+
+ <div class="container">	
+<div *ngIf="selectedIso3166" class="selectedIso3166">
+    <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+        <div class="card-header">
+            <fieldset class="form-group  col-md-12">
+              {{selectedIso3166.Lang}}
+                </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedIso3166.Id}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedIso3166.DFC | date}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedIso3166.DLC | date}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedIso3166.User}}
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Lang: </label>
+              <input [(ngModel)]="selectedIso3166.Lang" placeholder="Lang"/>
+          </fieldset>
+            <fieldset class="form-group">
+              <label>Active: </label>
+              <input [(ngModel)]="selectedIso3166.Active" placeholder="Active"/>
+            </fieldset>
+            <fieldset class="form-group">
+              <label>Iso: </label>
+              <input [(ngModel)]="selectedIso3166.Iso" placeholder="Iso"/>
+          </fieldset>
+          <fieldset class="form-group">
+              <label>Name: </label>
+              <input [(ngModel)]="selectedIso3166.Name" placeholder="Name"/>
+          </fieldset>
+            <fieldset class="form-group">
+              <label>PrintName: </label>
+              <input [(ngModel)]="selectedIso3166.PrintName" placeholder="PrintName"/>
+          </fieldset>
+            <fieldset class="form-group">
+              <label>Iso3: </label>
+              <input [(ngModel)]="selectedIso3166.Iso3" placeholder="Iso3"/>
+          </fieldset>
+            <fieldset class="form-group">
+              <label>NumCode: </label>
+              <input [(ngModel)]="selectedIso3166.NumCode" placeholder="NumCode"/>
+          </fieldset>
+            <fieldset class="form-group">
+              <label>NativeName: </label>
+              <input [(ngModel)]="selectedIso3166.NativeName" placeholder="NativeName"/>
+          </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View iso3166</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedIso3166">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Id or Language Code:</label><input #iso3166Search (input)="term$.next($event.target.value)" placeholder="Enter Id or iso3166" />
+             <button class="btn btn-danger" (click)="add(iso3166Search.value)"> Add </button>
+      </div>
+<div class="table-responsive">
+  <table class="table">
+  <tbody>
+  <tr *ngFor="let iso3166 of iso3166s" (click)="onSelect(iso3166)"
+      [class.selected]="iso3166 === selectedIso3166" class="list-group-item">
+				   <div *ngIf!="appservice.admin">
+             <td class="Id"><b>{{iso3166.Id}}</b></td> 
+              <td class="Referer">{{iso3166.Lang}}</td> 
+              <td class="Referer">{{iso3166.Active}}</td> 
+              <td class="Iso">{{iso3166.Iso}}</td> 
+              <td class="Name">{{iso3166.Name}}</td> 
+              <td class="PrintName">{{iso3166.PrintName}}</td> 
+              <td class="Iso3">{{iso3166.Iso3}}</td> 
+              <td class="NumCode">{{iso3166.NumCode}}</td> 
+              <td class="NativeName">{{iso3166.NativeName}}</td> 
+            </div>
+            <div *ngIf="appservice.admin">
+              <td class="DFC"><b>{{iso3166.Id}}</b></td> 
+            <td class="DFC">{{iso3166.DFC}}</td> 
+              <td class="DFC">{{iso3166.DLC}}</td> 
+              <td class="DFC">{{iso3166.User}}</td> 
+              <td><button class="btn-xs btn-danger" (click)="delete(iso3166); $event.stopPropagation()">x</button></td>
+            </div>
+    </tr>
+</tbody>
+</table>
+        </div>
+</div></div></div></div>

@@ -1,0 +1,29 @@
+<p>
+  posts List!
+</p>
+
+<ul class="posts">
+  <li *ngFor="let post of posts" (click)="onSelect(post)"
+      [class.selected]="post === selectedPost">
+    <span class="badge">{{post.Id}}</span>
+    <span>
+          {{post.Id}} 
+          {{post.DFC}} 
+          {{post.DLC}} 
+          {{post.User}} 
+          {{post.Did}} 
+          {{post.Pid}} 
+          {{post.Days}} 
+          {{post.Hits}} 
+          {{post.Valid}} 
+          {{post.Paid}} 
+          {{post.Closed}} 
+          {{post.Amt}} 
+          {{post.PostUrl}} 
+          {{post.PostText}} 
+      </span>
+    <button class="delete"
+      (click)="delete(post); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+ 

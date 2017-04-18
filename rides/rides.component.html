@@ -1,0 +1,159 @@
+<div *ngIf="selectedRide" class="selectedride">
+     <div class="container">
+      <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+            {{selectedRide.RideFromName}}<br>
+          {{selectedRide.Id}} {{selectedRide.DFC | date}} {{selectedRide.DLC | date}} {{selectedRide.User}}
+          </div> 
+       <fieldset class="form-group">
+        <label>Id: </label>
+        <input [(ngModel)]="selectedRide.Id" placeholder="Id"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DFC: </label>
+        <input [(ngModel)]="selectedRide.DFC" placeholder="DFC"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DLC: </label>
+        <input [(ngModel)]="selectedRide.DLC" placeholder="DLC"/>
+  </fieldset>
+      <fieldset class="form-group">
+        <label>User: </label>
+        <input [(ngModel)]="selectedRide.User" placeholder="User"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Did: </label>
+        <input [(ngModel)]="selectedRide.Did" placeholder="Did"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>Pid: </label>
+        <input [(ngModel)]="selectedRide.Pid" placeholder="Pid"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>SchedId: </label>
+        <input [(ngModel)]="selectedRide.SchedId" placeholder="SchedId"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Processed: </label>
+        <input [(ngModel)]="selectedRide.Processed" placeholder="Processed"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>PO: </label>
+        <input [(ngModel)]="selectedRide.PO" placeholder="PO"/>
+  </fieldset>
+      <fieldset class="form-group">
+        <label>RideFromId: </label>
+        <input [(ngModel)]="selectedRide.RideFromId" placeholder="RideFromId"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideFromName: </label>
+        <input [(ngModel)]="selectedRide.RideFromName" placeholder="RideFromName"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideFromLat: </label>
+        <input [(ngModel)]="selectedRide.RideFromLat" placeholder="RideFromLat"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>RideFromLng: </label>
+        <input [(ngModel)]="selectedRide.RideFromLng" placeholder="RideFromLng"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>RideToId: </label>
+        <input [(ngModel)]="selectedRide.RideToId" placeholder="RideToId"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideToName: </label>
+        <input [(ngModel)]="selectedRide.RideToName" placeholder="RideToName"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>RideToLat: </label>
+        <input [(ngModel)]="selectedRide.RideToLat" placeholder="RideToLat"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>RideToLng: </label>
+        <input [(ngModel)]="selectedRide.RideToLng" placeholder="RideToLng"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideDistance: </label>
+        <input [(ngModel)]="selectedRide.RideDistance" placeholder="RideDistance"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideDuration: </label>
+        <input [(ngModel)]="selectedRide.RideDuration" placeholder="RideDuration"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideDate: </label>
+        <input [(ngModel)]="selectedRide.RideDate" placeholder="RideDate"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideStartTime: </label>
+        <input [(ngModel)]="selectedRide.RideStartTime" placeholder="RideStartTime"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideEndTime: </label>
+        <input [(ngModel)]="selectedRide.RideEndTime" placeholder="RideEndTime"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideStart: </label>
+        <input [(ngModel)]="selectedRide.RideStart" placeholder="RideStart"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>RideEnd: </label>
+        <input [(ngModel)]="selectedRide.RideEnd" placeholder="RideEnd"/>
+  </fieldset>
+      <fieldset class="form-group">
+        <label>Weight: </label>
+        <input [(ngModel)]="selectedRide.Weight" placeholder="Weight"/>
+    </fieldset>
+    <button (click)="onDeSelect()" class="btn btn-success">View RidesList</button>
+ <button (click)="onDeSelect()" class="btn btn-caution">View Ride</button>
+    </div></div></div></div></div>
+
+    <div *ngIf!="selectedRide" class="selectedride">
+  <div class="container">	
+  <div class="row">
+        <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search Rides by User Id or RideFromName:</label> 
+<input #rideSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+     </div>
+   <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody>
+        <tr *ngFor="let ride of rides" (click)="onSelect(ride)"
+            [class.selected]="ride === selectedRide" class="list-group-item">
+            <div *ngIf!="appservice.admin">
+                    <td class="Id">{{ride.Id}}</td>
+                    <td class="Id">{{ride.Pid}}<br>{{ride.Did}}</td>
+                    <td class="Name">{{ride.RideFromName}}<br>{{ride.RideToName}}</td>
+                    <td class="Rate">{{ride.RideDistance}}<br>{{ride.RideDuration}}</td> 
+                    <td class="Id">{{ride.RideDate}}</td>
+                    <td class="Time">{{ride.RideStartTime}}<br>{{ride.RideEndTime}}</td>
+                    <td class="Lat">{{ride.Weight}}</td>
+                    <td class="button"><button class="btn-sm btn-danger" (click)="delete(ride); $event.stopPropagation()">x</button></td>
+              </div>
+              <div *ngIf="appservice.admin">
+                   <td class="Id">{{ride.Id}}</td>
+                    <td class="DateText">{{ride.DFC}}<br>{{ride.DLC}}</td>
+                    <td class="Id">*{{ride.Processed}}*<br>{{ride.SchedId}}</td>
+                    <td class="Id">{{ride.PO}}<br>{{ride.User}}</td> 
+                    <td class="Id">{{ride.RideFromId}}</td> 
+                    <td class="Lat">{{ride.RideFromLat}}<br>{{ride.RideFromLng}}</td> 
+                    <td class="Id">{{ride.RideToId}}</td> 
+                    <td class="Lat">{{ride.RideToLat}}<br>{{ride.RideToLng}}</td>
+                    <td class="Time">{{ride.RideStart}}<br>{{ride.RideEnd}}</td> 
+                    <td class="button"><button class="btn-sm btn-danger" (click)="delete(ride); $event.stopPropagation()">x</button></td>
+          </div>
+ </tr></tbody></table>
+        </div>
+</div></div></div></div>
+
+
+
+
+
+
+
+  

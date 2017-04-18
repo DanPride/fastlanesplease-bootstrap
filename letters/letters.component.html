@@ -1,0 +1,91 @@
+<div class="container">	
+  <div *ngIf="selectedLetter" class="selectedLetter">
+         <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+              <fieldset class="form-group  col-md-12">
+                  {{selectedLetter.Letter}}
+              </fieldset>
+              <fieldset class="form-group col-md-3">
+                      {{selectedLetter.Id}} 
+              </fieldset>
+              <fieldset class="form-group col-md-3">
+                      {{selectedLetter.DFC | date}} 
+              </fieldset>
+              <fieldset class="form-group col-md-3">
+                      {{selectedLetter.DLC | date}} 
+              </fieldset>
+              <fieldset class="form-group col-md-3">
+                      {{selectedLetter.User}}
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Letter: </label>
+                <input [(ngModel)]="selectedLetter.Letter" placeholder="Letter"/>
+            </fieldset>
+              <fieldset class="form-group">
+                <label>Type: </label>
+                <input [(ngModel)]="selectedLetter.Type" placeholder="Type"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Pattern: </label>
+                <input [(ngModel)]="selectedLetter.Pattern" placeholder="Pattern"/>
+            </fieldset>
+              <fieldset class="form-group">
+                <label>Trig: </label>
+                <input [(ngModel)]="selectedLetter.Trig" placeholder="Trig"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Definition: </label>
+                <input [(ngModel)]="selectedLetter.Definition" placeholder="Definition"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Channel: </label>
+                <input [(ngModel)]="selectedLetter.Channel" placeholder="Channel"/>
+              </fieldset>
+              <fieldset class="form-group">
+                <label>Vendor: </label>
+                <input [(ngModel)]="selectedLetter.Vendor" placeholder="Vendor"/>
+                </fieldset>
+              <fieldset class="form-group">
+                <label>Count: </label>
+                <input [(ngModel)]="selectedLetter.Count" placeholder="Count"/>
+            </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View Letter</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedLetter">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Id Or Letter:</label><input #letterSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Letter" />
+             <button class="btn btn-danger" (click)="add(letterSearch.value)"> Add </button>
+      </div>
+<div class="table-responsive">
+  <table class="table">
+      <tbody>
+        <tr *ngFor="let letter of letters" (click)="onSelect(letter)"
+            [class.selected]="letter === selectedLetter" class="list-group-item">
+              <td class="Id"><b>{{letter.Id}}</b></td> 
+              <td class="Did">{{letter.Letter}}</td> 
+              <td class="Did">{{letter.Type}}</td> 
+              <td class="Did">{{letter.Pattern}}</td> 
+              <td class="Did">{{letter.Trig}}</td> 
+              <td class="Did">{{letter.Definition}}</td> 
+              <td class="Did">{{letter.Channel}}</td> 
+              <td class="Did">{{letter.Vendor}}</td> 
+              <td class="Did">{{letter.Count}}</td>   
+            <td><button class="btn-xs btn-danger" (click)="delete(letter); $event.stopPropagation()">x</button></td>
+        </tr>
+</tbody>
+</table>
+        </div>
+</div></div></div></div>
+
+
+
+
+
+
+

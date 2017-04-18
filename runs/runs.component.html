@@ -1,0 +1,144 @@
+
+<div class="container">	
+  <div class="row">
+  <div *ngIf="selectedRun" class="selectedRun">
+       <div class="container">
+         <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+                    {{selectedRun.DriveFromName}}<br>
+                    {{selectedRun.Id}} {{selectedRun.DFC}} {{selectedRun.DLC}} {{selectedRun.User}}
+				</div>
+				</div>
+      <fieldset class="form-group">
+        <label>Name: </label>
+        <input [(ngModel)]="selectedRun.Id" placeholder="Id"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>DFC: </label>
+        <input [(ngModel)]="selectedRun.DFC" placeholder="DFC"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DLC: </label>
+        <input [(ngModel)]="selectedRun.DLC" placeholder="DLC"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>User: </label>
+        <input [(ngModel)]="selectedRun.User" placeholder="User"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>DriveId: </label>
+        <input [(ngModel)]="selectedRun.DriveId" placeholder="DriveId"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>RideId: </label>
+        <input [(ngModel)]="selectedRun.RideId" placeholder="RideId"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>DrivePid: </label>
+        <input [(ngModel)]="selectedRun.DrivePid" placeholder="DrivePid"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>RidePid: </label>
+        <input [(ngModel)]="selectedRun.RidePid" placeholder="RidePid"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>DriveDate: </label>
+        <input [(ngModel)]="selectedRun.DriveDate" placeholder="DriveDate"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>RideDate: </label>
+        <input [(ngModel)]="selectedRun.RideDate" placeholder="RideDate"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveTime: </label>
+        <input [(ngModel)]="selectedRun.DriveTime" placeholder="DriveTime"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>RideTime: </label>
+        <input [(ngModel)]="selectedRun.RideTime" placeholder="RideTime"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFromName: </label>
+        <input [(ngModel)]="selectedRun.DriveFromName" placeholder="DriveFromName"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>RideFromName: </label>
+        <input [(ngModel)]="selectedRun.RideFromName" placeholder="RideFromName"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveToName: </label>
+        <input [(ngModel)]="selectedRun.DriveToName" placeholder="DriveToName"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>RideToName: </label>
+        <input [(ngModel)]="selectedRun.RideToName" placeholder="RideToName"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveScore: </label>
+        <input [(ngModel)]="selectedRun.DriveScore" placeholder="DriveScore"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>RideScore: </label>
+        <input [(ngModel)]="selectedRun.RideScore" placeholder="RideScore"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveComments: </label>
+        <input [(ngModel)]="selectedRun.DriveComments" placeholder="DriveComments"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>RideComments: </label>
+        <input [(ngModel)]="selectedRun.RideComments" placeholder="RideComments"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>PO: </label>
+        <input [(ngModel)]="selectedRun.PO" placeholder="PO"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Charge: </label>
+        <input [(ngModel)]="selectedRun.Charge" placeholder="Charge"/>
+     </fieldset>
+ <button (click)="onDeSelect()">View Run</button>
+ <button class="btn btn-danger" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+     <div *ngIf!="selectedRun">
+         <div class="row">
+          <div class="card text-xs-center">
+            <div class="card-block">
+                  <label>Search Runs by User Id or DriveFromName:</label> <input #runSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+                  <button class="btn btn-danger" (click)="add(logSearch.value)"> Add </button>
+            </div>
+          <div class="table-responsive">
+            <table class="table">
+               <tbody>
+                  <tr *ngFor="let run of runs" (click)="onSelect(run)"
+                    [class.selected]="run === selectedRun"  class="list-group-item">
+                         <div *ngIf!="appservice.admin">
+                      <td class="Id"><b>{{run.Id}}</b></td>
+                      <td class="Id">{{run.DriveId}}</td>
+                      <td class="Id">{{run.RideId}}</td>
+                      <td class="Id">{{run.DrivePid}}</td>
+                      <td class="Id">{{run.DriveFromName}}<br>{{run.DriveToName}}</td>
+                      <td class="Id">{{run.DriveDate | date}}<br>{{run.DriveTime}}</td>
+                      <td class="Id">{{run.RidePid}}</td>
+                      <td class="Id">{{run.RideFromName}}<br>{{run.RideToName}}</td>
+                      <td class="Id">{{run.RideDate | date}}<br>{{run.RideTime}}</td>
+                         <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
+                      </div>
+                      <div *ngIf="appservice.admin">
+                      <td class="Id"><b>{{run.Id}}</b></td>
+                      <td class="Id">{{run.DFC}}</td>
+                      <td class="Id">{{run.DLC}}</td>
+                      <td class="Id">{{run.User}}</td>
+                      <td class="Id">{{run.DriveScore}}<br>{{run.DriveComments}}</td>
+                      <td class="Id">{{run.RideScore}}<br>{{run.RideComments}}</td>
+                      <td class="Id">{{run.PO}}<br>{{run.Charge}}</td>
+                         <td><button class="btn-xs btn-danger" (click)="delete(log); $event.stopPropagation()">x</button></td>
+                      </div>
+               
+                </tr>
+          </tbody>
+        </table>
+</div></div></div></div></div>

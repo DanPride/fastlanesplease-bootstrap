@@ -1,0 +1,19 @@
+<p>
+  run works!
+</p>
+
+<div *ngIf="run">
+  <h2>{{run.DriveFromName}} {{run.DriveToName}}</h2>
+  <div>
+    <label>Id: </label>{{run.Id}}</div>
+  <div>
+    <label>description: </label>
+    <input [(ngModel)]="run.RideDate" placeholder="Description" />
+   </div>
+   <div>
+    <label>priority: </label>
+    <input [(ngModel)]="run.DriveDate" placeholder="Priority" />
+   </div>
+  <button (click)="goBack()">Back</button>
+  <button (click)="save()">Save</button>
+</div>

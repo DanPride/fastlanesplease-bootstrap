@@ -1,0 +1,543 @@
+
+<div class="container">	
+    <div *ngIf="selectedLang" class="selectedLang">
+       <div class="row">
+            <div class="card text-xs-center">
+                <div class="card-block">
+                    <div class="card-header">
+            <fieldset class="form-group  col-md-12">
+                {{selectedLang.Language}}
+                </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedLang.Id}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedLang.DFC | date}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedLang.DLC | date}} 
+            </fieldset>
+            <fieldset class="form-group col-md-3">
+                    {{selectedLang.User}}
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>About: </label>
+                    <input [(ngModel)]="selectedLang.About" placeholder="About"/>
+            </fieldset>
+                <fieldset class="form-group  col-md-12">
+                    <label>AboutYou: </label>
+                    <input [(ngModel)]="selectedLang.AboutYou" placeholder="AboutYou"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>AddDestinationPlace: </label>
+                    <input [(ngModel)]="selectedLang.AddDestinationPlace" placeholder="AddDestinationPlace"/>
+            </fieldset>
+            
+            <fieldset class="form-group  col-md-12">
+                    <label>AddPlaces: </label>
+                    <input [(ngModel)]="selectedLang.AddPlaces" placeholder="AddPlaces"/>
+            </fieldset>
+            
+            <fieldset class="form-group  col-md-12">
+                    <label>AddStartingPlace: </label>
+                    <input [(ngModel)]="selectedLang.AddStartingPlace" placeholder="AddStartingPlace"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>Admin: </label>
+                    <input [(ngModel)]="selectedLang.Admin" placeholder="Admin"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>AndClickEnter: </label>
+                    <input [(ngModel)]="selectedLang.AndClickEnter" placeholder="AndClickEnter"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>AnnounceDrive: </label>
+                    <input [(ngModel)]="selectedLang.AnnounceDrive" placeholder="AnnounceDrive"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>AnnounceDriveOrSchedule: </label>
+                    <input [(ngModel)]="selectedLang.AnnounceDriveOrSchedule" placeholder="AnnounceDriveOrSchedule"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                    <label>AtText: </label>
+                    <input [(ngModel)]="selectedLang.AtText" placeholder="AtText"/>
+            </fieldset>
+                    <fieldset class="form-group  col-md-12">
+                    <label>ByText: </label>
+                    <input [(ngModel)]="selectedLang.ByText" placeholder="ByText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+            <label>Cancel: </label>
+            <input [(ngModel)]="selectedLang.Cancel" placeholder="Cancel"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>CancelMe: </label>
+                <input [(ngModel)]="selectedLang.CancelMe" placeholder="CancelMe"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>CarPhoto: </label>
+                <input [(ngModel)]="selectedLang.CarPhoto" placeholder="CarPhoto"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Cell: </label>
+                <input [(ngModel)]="selectedLang.Cell" placeholder="Cell"/>
+            </fieldset>
+                <fieldset class="form-group  col-md-12">
+                <label>ContinueText: </label>
+                <input [(ngModel)]="selectedLang.ContinueText" placeholder="ContinueText"/>
+            </fieldset>
+                <fieldset class="form-group  col-md-12">
+                <label>DefaultText: </label>
+                <input [(ngModel)]="selectedLang.DefaultText" placeholder="DefaultText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Copyright: </label>
+                <input [(ngModel)]="selectedLang.Copyright" placeholder="Copyright"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Country: </label>
+                <input [(ngModel)]="selectedLang.Country" placeholder="Country"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>CSurf: </label>
+                <input [(ngModel)]="selectedLang.CSurf" placeholder="CSurf"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Deactivate: </label>
+                <input [(ngModel)]="selectedLang.Deactivate" placeholder="Deactivate"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DefaultText: </label>
+                <input [(ngModel)]="selectedLang.DefaultText" placeholder="DefaultText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DeleteSchedule: </label>
+                <input [(ngModel)]="selectedLang.DeleteSchedule" placeholder="DeleteSchedule"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DeleteText: </label>
+                <input [(ngModel)]="selectedLang.DeleteText" placeholder="DeleteText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Descrip: </label>
+                <input [(ngModel)]="selectedLang.Descrip" placeholder="Descrip"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DistribUrl: </label>
+                <input [(ngModel)]="selectedLang.DistribUrl" placeholder="DistribUrl"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Domain: </label>
+                <input [(ngModel)]="selectedLang.Domain" placeholder="Domain"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DownloadFile: </label>
+                <input [(ngModel)]="selectedLang.DownloadFile" placeholder="DownloadFile"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveFee: </label>
+                <input [(ngModel)]="selectedLang.DriveFee" placeholder="DriveFee"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveFrom: </label>
+                <input [(ngModel)]="selectedLang.DriveFrom" placeholder="DriveFrom"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveMax: </label>
+                <input [(ngModel)]="selectedLang.DriveMax" placeholder="DriveMax"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveMin: </label>
+                <input [(ngModel)]="selectedLang.DriveMin" placeholder="DriveMin"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveRate: </label>
+                <input [(ngModel)]="selectedLang.DriveRate" placeholder="DriveRate"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveRequests: </label>
+                <input [(ngModel)]="selectedLang.DriveRequests" placeholder="DriveRequests"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Drives: </label>
+                <input [(ngModel)]="selectedLang.Drives" placeholder="Drives"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DrivesFor: </label>
+                <input [(ngModel)]="selectedLang.DrivesFor" placeholder="DrivesFor"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>DriveTo: </label>
+                <input [(ngModel)]="selectedLang.DriveTo" placeholder="DriveTo"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Edit: </label>
+                <input [(ngModel)]="selectedLang.Edit" placeholder="Edit"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Email: </label>
+                <input [(ngModel)]="selectedLang.Email" placeholder="Email"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EmailCheck: </label>
+                <input [(ngModel)]="selectedLang.EmailCheck" placeholder="EmailCheck"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EmailNotFound: </label>
+                <input [(ngModel)]="selectedLang.EmailNotFound" placeholder="EmailNotFound"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EmailNotSent: </label>
+                <input [(ngModel)]="selectedLang.EmailNotSent" placeholder="EmailNotSent"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EndTime: </label>
+                <input [(ngModel)]="selectedLang.EndTime" placeholder="EndTime"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Enter: </label>
+                <input [(ngModel)]="selectedLang.Enter" placeholder="Enter"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EnterComments: </label>
+                <input [(ngModel)]="selectedLang.EnterComments" placeholder="EnterComments"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EnterEvaluation: </label>
+                <input [(ngModel)]="selectedLang.EnterEvaluation" placeholder="EnterEvaluation"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EnterTwoDigit: </label>
+                <input [(ngModel)]="selectedLang.EnterTwoDigit" placeholder="EnterTwoDigit"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>EveryWeek: </label>
+                <input [(ngModel)]="selectedLang.EveryWeek" placeholder="EveryWeek"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Example: </label>
+                <input [(ngModel)]="selectedLang.Example" placeholder="Example"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>FaceBook: </label>
+                <input [(ngModel)]="selectedLang.FaceBook" placeholder="FaceBook"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Find: </label>
+                <input [(ngModel)]="selectedLang.Find" placeholder="Find"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>FirstNameLastName: </label>
+                <input [(ngModel)]="selectedLang.FirstNameLastName" placeholder="FirstNameLastName"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>ForText: </label>
+                <input [(ngModel)]="selectedLang.ForText" placeholder="ForText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>FromText: </label>
+                <input [(ngModel)]="selectedLang.FromText" placeholder="FromText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>GetGPS: </label>
+                <input [(ngModel)]="selectedLang.GetGPS" placeholder="GetGPS"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>GooglePlus: </label>
+                <input [(ngModel)]="selectedLang.GooglePlus" placeholder="GooglePlus"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Here: </label>
+                <input [(ngModel)]="selectedLang.Here" placeholder="Here"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>HotMail: </label>
+                <input [(ngModel)]="selectedLang.HotMail" placeholder="HotMail"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>HowThisWorks: </label>
+                <input [(ngModel)]="selectedLang.HowThisWorks" placeholder="HowThisWorks"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>InText: </label>
+                <input [(ngModel)]="selectedLang.InText" placeholder="InText"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>InvalidEmail: </label>
+                <input [(ngModel)]="selectedLang.InvalidEmail" placeholder="InvalidEmail"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>InvitesSent: </label>
+                <input [(ngModel)]="selectedLang.InvitesSent" placeholder="InvitesSent"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>InvitesSentTo: </label>
+                <input [(ngModel)]="selectedLang.InvitesSentTo" placeholder="InvitesSentTo"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MailPrefs: </label>
+                <input [(ngModel)]="selectedLang.MailPrefs" placeholder="MailPrefs"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Keywords: </label>
+                <input [(ngModel)]="selectedLang.Keywords" placeholder="Keywords"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Lattitude: </label>
+                <input [(ngModel)]="selectedLang.Lattitude" placeholder="Lattitude"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>ListDaysOut: </label>
+                <input [(ngModel)]="selectedLang.ListDaysOut" placeholder="ListDaysOut"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>ListsAndReports: </label>
+                <input [(ngModel)]="selectedLang.ListsAndReports" placeholder="ListsAndReports"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Log_In: </label>
+                <input [(ngModel)]="selectedLang.Log_In" placeholder="Log_In"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>LogOut: </label>
+                <input [(ngModel)]="selectedLang.LogOut" placeholder="LogOut"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Longitude: </label>
+                <input [(ngModel)]="selectedLang.Longitude" placeholder="Longitude"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Manual: </label>
+                <input [(ngModel)]="selectedLang.Manual" placeholder="Manual"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MapAddress: </label>
+                <input [(ngModel)]="selectedLang.MapAddress" placeholder="MapAddress"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MapPrefs: </label>
+                <input [(ngModel)]="selectedLang.MapPrefs" placeholder="MapPrefs"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MatchPrefs: </label>
+                <input [(ngModel)]="selectedLang.MatchPrefs" placeholder="MatchPrefs"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>Miles: </label>
+                <input [(ngModel)]="selectedLang.Miles" placeholder="Miles"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MinMaxCalculator: </label>
+                <input [(ngModel)]="selectedLang.MinMaxCalculator" placeholder="MinMaxCalculator"/>
+	        </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MobilePhone: </label>
+                <input [(ngModel)]="selectedLang.MobilePhone" placeholder="MobilePhone"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MobileServiceProvider: </label>
+                <input [(ngModel)]="selectedLang.MobileServiceProvider" placeholder="MobileServiceProvider"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>MyPhoto: </label>
+                <input [(ngModel)]="selectedLang.MyPhoto" placeholder="MyPhoto"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NameThere: </label>
+                <input [(ngModel)]="selectedLang.NameThere" placeholder="NameThere"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NameThisPlaceHeader: </label>
+                <input [(ngModel)]="selectedLang.NameThisPlaceHeader" placeholder="NameThisPlaceHeader"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NeedsARider: </label>
+                <input [(ngModel)]="selectedLang.NeedsARider" placeholder="NeedsARider"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NeedsARide: </label>
+                <input [(ngModel)]="selectedLang.NeedsARide" placeholder="NeedsARide"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NewEvent: </label>
+                <input [(ngModel)]="selectedLang.NewEvent" placeholder="NewEvent"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NewFeed: </label>
+                <input [(ngModel)]="selectedLang.NewFeed" placeholder="NewFeed"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NoActivity: </label>
+                <input [(ngModel)]="selectedLang.NoActivity" placeholder="NoActivity"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NoFeedbackYet: </label>
+                <input [(ngModel)]="selectedLang.NoFeedbackYet" placeholder="NoFeedbackYet"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NotAvailable: </label>
+                <input [(ngModel)]="selectedLang.NotAvailable" placeholder="NotAvailable"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>NotSpecified: </label>
+                <input [(ngModel)]="selectedLang.NotSpecified" placeholder="NotSpecified"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>OAuth: </label>
+                <input [(ngModel)]="selectedLang.OAuth" placeholder="OAuth"/>
+            </fieldset>
+            <fieldset class="form-group  col-md-12">
+                <label>OK: </label>
+                <input [(ngModel)]="selectedLang.OK" placeholder="OK"/>
+            </fieldset>
+                <fieldset class="form-group  col-md-12">
+                    <label>OnUserSched: </label>
+                    <input [(ngModel)]="selectedLang.OnUserSched" placeholder="OnUserSched" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>OnePlace: </label>
+                        <input [(ngModel)]="selectedLang.OnePlace" placeholder="OnePlace" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>Owner: </label>
+                          <input [(ngModel)]="selectedLang.Owner" placeholder="Owner" />
+                </fieldset>
+            
+                <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+                <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+<div *ngIf!="selectedLang">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search by Id or Language Code:</label> <input #LangSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(langSearch.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                 <tr *ngFor="let lang of langs" (click)="onSelect(lang)"
+                 [class.selected]="lang === selectedLang" class="list-group-item">
+                        <div *ngIf!="appservice.admin">
+                            <td class="Id"><b>{{lang.Id}}</b></td>
+                            <td class="Id"><b>{{lang.Lang}}</b></td>
+                            <td class="Language"><b>{{lang.Language}}</b></td>
+                            <td class="DFC"><b>{{lang.DFC}}</b></td>
+                            <td class="DLC"><b>{{lang.DLC}}</b></td>
+                            <td class="User"><b>{{lang.User}}</b></td>
+                        </div><div *ngIf="appservice.admin">
+                            <td class="Id"><b>{{lang.Id}}</b></td>
+                            <td class="Id">{{lang.Language}}</td>
+                            <td class="Id">{{lang.About}}</td>
+                            <td class="Id">{{lang.AboutYou}}</td>
+                            <td class="Id">{{lang.AddDestinationPlace}}</td>
+                            <td class="Id">{{lang.AddPlaces}}</td>
+                            <td class="Id">{{lang.AddStartingPlace}}</td>
+                            <td class="Id">{{lang.Admin}}</td>
+                            <td class="Id">{{lang.AndClickEnter}}</td>
+                            <td class="Id">{{lang.AnnounceDrive}}</td>
+                            <td class="Id">{{lang.AnnounceDriveOrSchedule}}</td>
+                            <td class="Id">{{lang.AtText}}</td>
+                            <td class="Id">{{lang.ByText}}</td>
+                            <td class="Id">{{lang.Cancel}}</td>
+                            <td class="Id">{{lang.CancelMe}}</td>
+                            <td class="Id">{{lang.CarPhoto}}</td>
+                            <td class="Id">{{lang.Cell}}</td>
+                            <td class="Id">{{lang.ConfirmPassword}}</td>
+                            <td class="Id">{{lang.ContinueText}}</td>
+                            <td class="Id">{{lang.Copyright}}</td>
+                            <td class="Id">{{lang.Country}}</td>
+                            <td class="Id">{{lang.CSurf}}</td>
+                            <td class="Id">{{lang.Deactivate}}</td>
+                            <td class="Id">{{lang.DefaultText}}</td>
+                            <td class="Id">{{lang.DeleteSchedule}}</td>
+                            <td class="Id">{{lang.DeleteText}}</td>
+                            <td class="Id">{{lang.Descrip}}</td>
+                            <td class="Id">{{lang.DistribUrl}}</td>
+                            <td class="Id">{{lang.Domain}}</td>
+                            <td class="Id">{{lang.DownloadFile}}</td>
+                            <td class="Id">{{lang.DriveFee}}</td>
+                            <td class="Id">{{lang.DriveFrom}}</td>
+                            <td class="Id">{{lang.DriveMax}}</td>
+                            <td class="Id">{{lang.DriveMin}}</td>
+                            <td class="Id">{{lang.DriveRate}}</td>
+                            <td class="Id">{{lang.DriveRequests}}</td>
+                            <td class="Id">{{lang.Drives}}</td>
+                            <td class="Id">{{lang.DrivesFor}}</td>
+                            <td class="Id">{{lang.DriveTo}}</td>
+                            <td class="Id">{{lang.Edit}}</td>
+                            <td class="Id">{{lang.Email}}</td>
+                            <td class="Id">{{lang.EmailCheck}}</td>
+                            <td class="Id">{{lang.EmailNotFound}}</td>
+                            <td class="Id">{{lang.EmailNotSent}}</td>
+                            <td class="Id">{{lang.EndTime}}</td>
+                            <td class="Id">{{lang.Enter}}</td>
+                            <td class="Id">{{lang.EnterComments}}</td>
+                            <td class="Id">{{lang.EnterEvaluation}}</td>
+                            <td class="Id">{{lang.EnterYourPlaces}}</td>
+                            <td class="Id">{{lang.Error}}</td>
+                            <td class="Id">{{lang.EventAddress}}</td>
+                            <td class="Id">{{lang.Events}}</td>
+                            <td class="Id">{{lang.EventDefaultValues}}</td>
+                            <td class="Id">{{lang.EventDescrip}}</td>
+                            <td class="Id">{{lang.EventName}}</td>
+                            <td class="Id">{{lang.EventSearch}}</td>
+                            <td class="Id">{{lang.EventSelectDate}}</td> 
+                            <td class="Id">{{lang.EnterTwoDigit}}</td>
+                            <td class="Id">{{lang.EveryWeek}}</td>
+                            <td class="Id">{{lang.Example}}</td>
+                            <td class="Id">{{lang.FaceBook}}</td>
+                            <td class="Id">{{lang.Find}}</td>
+                            <td class="Id">{{lang.FirstNameLastName}}</td>
+                            <td class="Id">{{lang.ForText}}</td>
+                            <td class="Id">{{lang.FromText}}</td>
+                            <td class="Id">{{lang.GetGPS}}</td>
+                            <td class="Id">{{lang.GooglePlus}}</td>
+                            <td class="Id">{{lang.Here}}</td>
+                            <td class="Id">{{lang.HotMail}}</td>
+                            <td class="Id">{{lang.HowThisWorks}}</td>
+                            <td class="Id">{{lang.InText}}</td>
+                            <td class="Id">{{lang.InvalidEmail}}</td>
+                            <td class="Id">{{lang.InvitesSent}}</td>
+                            <td class="Id">{{lang.InvitesSentTo}}</td>
+                            <td class="Id">{{lang.MailPrefs}}</td>
+                            <td class="Id">{{lang.Keywords}}</td>
+                            <td class="Id">{{lang.Lattitude}}</td>
+                            <td class="Id">{{lang.ListDaysOut}}</td>
+                            <td class="Id">{{lang.ListsAndReports}}</td>
+                            <td class="Id">{{lang.Log_In}}</td>
+                            <td class="Id">{{lang.Login}}</td>
+                            <td class="Id">{{lang.LogOut}}</td>
+                            <td class="Id">{{lang.Longitude}}</td>
+                            <td class="Id">{{lang.Manual}}</td>
+                            <td class="Id">{{lang.MapAddress}}</td>
+                            <td class="Id">{{lang.MapPrefs}}</td>
+                            <td class="Id">{{lang.MatchPrefs}}</td>
+                            <td class="Id">{{lang.Miles}}</td>
+                            <td class="Id">{{lang.MinMaxCalculator}}</td>
+                            <td class="Id">{{lang.MobilePhone}}</td>
+                            <td class="Id">{{lang.MobileServiceProvider}}</td>
+                            <td class="Id">{{lang.MyPhoto}}</td>
+                            <td class="Id">{{lang.NameThere}}</td>
+                            <td class="Id">{{lang.NameThisPlaceHeader}}</td>
+                            <td class="Id">{{lang.NeedsARider}}</td>
+                            <td class="Id">{{lang.NeedsARide}}</td>
+                            <td class="Id">{{lang.NewEvent}}</td>
+                            <td class="Id">{{lang.NewFeed}}</td>
+                            <td class="Id">{{lang.NoActivity}}</td>
+                            <td class="Id">{{lang.NoFeedbackYet}}</td>
+                            <td class="Id">{{lang.NotAvailable}}</td>
+                            <td class="Id">{{lang.NotSpecified}}</td>
+                            <td class="Id">{{lang.OAuth}}</td>
+                            <td class="Id">{{lang.OK}}</td>
+                            <td class="Id">{{lang.OnUserSched}}</td>
+                            <td class="Id">{{lang.OnePlace}}</td>
+                            <td class="Id">{{lang.Owner}}</td>
+                            
+                        </div>
+                        <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>

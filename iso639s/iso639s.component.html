@@ -1,0 +1,68 @@
+ <div class="container">	
+<div *ngIf="selectedIso639" class="selectedIso639">
+      <div class="row">
+			  <div class="card text-xs-center">
+				  <div class="card-block">
+				  	<div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedIso639.Lang}}<br>
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedIso639.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedIso639.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedIso639.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedEvent.User}}
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Active: </label>
+                  <input [(ngModel)]="selectedIso639.Active" placeholder="Active"/>
+              </fieldset>
+                <fieldset class="form-group">
+                  <label>Iso639: </label>
+                  <input [(ngModel)]="selectedIso639.Iso639" placeholder="Iso639"/>
+                </fieldset>
+                <fieldset class="form-group">
+                  <label>Lang: </label>
+                  <input [(ngModel)]="selectedIso639.Lang" placeholder="Lang"/>
+              </fieldset>
+              <fieldset class="form-group">
+                  <label>NativeName: </label>
+                  <input [(ngModel)]="selectedIso639.NativeName" placeholder="NativeName"/>
+              </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View iso639</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+</div></div></div></div></div>
+<div *ngIf!="selectedIso639">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Id or iso639:</label><input #iso639Search (input)="term$.next($event.target.value)" placeholder="Enter Id or iso639" />
+             <button class="btn btn-danger" (click)="add(iso639Search.value)"> Add </button>
+      </div>
+<div class="table-responsive">
+  <table class="table">
+    <tbody>
+        <tr *ngFor="let iso639 of iso639s" (click)="onSelect(iso639)"
+            [class.selected]="iso639 === selectedIso639" class="list-group-item">
+              <td class="Id"><b>{{iso639.Id}}</b></td> 
+              <td class="Referer">{{iso639.Active}}</td> 
+              <td class="Referer"><b>{{iso639.Iso639}}</b></td> 
+              <td class="Referer">{{iso639.Lang}}</td> 
+              <td class="Referer">{{iso639.NativeName}}</td> 
+                  <td class="DFC">{{iso639.DFC}}<br>{{iso639.DLC}}}</td> 
+              <td class="DFC">{{iso639.User}}</td> 
+              <td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td>
+          </tr>
+</tbody>
+</table>
+</div></div></div></div>
+
+
+
+ 

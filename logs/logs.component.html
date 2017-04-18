@@ -1,0 +1,108 @@
+<div class="container">	
+<div *ngIf="selectedLog" class="selectedLog">
+<div class="row">
+<div class="card text-xs-center">
+<div class="card-block">
+      <div class="card-header">
+        <fieldset class="form-group  col-md-12">
+          {{selectedLog.Name}}
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLog.Id}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLog.DFC | date}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLog.DLC | date}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLog.User}}
+        </fieldset>
+        <fieldset class="form-group  col-md-12">
+        <label>Did: </label>
+        <input [(ngModel)]="selectedLog.Did" placeholder="Did"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Pid: </label>
+        <input [(ngModel)]="selectedLog.Pid" placeholder="Pid"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Name: </label>
+        <input [(ngModel)]="selectedLog.Name" placeholder="Name"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Page: </label>
+        <input [(ngModel)]="selectedLog.Page" placeholder="Page"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Descrip: </label>
+        <input [(ngModel)]="selectedLog.Descrip" placeholder="Descrip"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Message: </label>
+        <input [(ngModel)]="selectedLog.Message" placeholder="Message"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>IP: </label>
+        <input [(ngModel)]="selectedLog.IP" placeholder="IP"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>Referer: </label>
+        <input [(ngModel)]="selectedLog.Referer" placeholder="Referer"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>RHost: </label>
+        <input [(ngModel)]="selectedLog.RHost" placeholder="RHost"/>
+       </fieldset> 
+      <fieldset class="form-group">
+        <label>Host: </label>
+        <input [(ngModel)]="selectedLog.Host" placeholder="Host"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Agent: </label>
+        <input [(ngModel)]="selectedLog.Agent" placeholder="Agent"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Server: </label>
+        <input [(ngModel)]="selectedLog.Server" placeholder="Server"/>
+     </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View log</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedLog">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by UserId or Page:</label><input #logSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or log" />
+             <button class="btn btn-danger" (click)="add(logSearch.value)"> Add </button>
+      </div>
+<div class="table-responsive">
+  <table class="table">
+  <tbody>
+  <tr *ngFor="let log of logs" (click)="onSelect(log)"
+      [class.selected]="log === selectedLog" class="list-group-item">
+        <div *ngIf!="appservice.admin">
+				<td class="Id"><b>{{log.Id}}</b></td> 
+				<td class="Did">{{log.Did}}</td> 
+        <td class="Pid"><b>{{log.Pid}}</b></td> 
+				<td class="Name">{{log.Name}}</td> 
+				<td class="Page">{{log.Page}}</td> 
+				<td class="Descrip">{{log.Descrip}}</td> 
+				<td class="Message">{{log.Message}}</td> 
+        </div>
+      <div *ngIf="appservice.admin">
+				<td class="IP">{{log.IP}}</td> 
+				<td class="Referer">{{log.Referer}}</td>  
+        <td class="RHost">{{log.RHost}}</td>  
+        <td class="Host">{{log.Host}}</td>  
+        <td class="Agent">{{log.Agent}}</td>  
+        <td class="Server">{{log.Server}}</td>   
+     <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+           </div>
+      </tr>
+  </tbody></table>
+  </div></div></div></div></div>
+

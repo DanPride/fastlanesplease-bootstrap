@@ -1,0 +1,22 @@
+<p>
+  invoices list!
+</p>
+
+<ul class="invoices">
+  <li *ngFor="let invoice of invoices" (click)="onSelect(invoice)"
+      [class.selected]="invoice === selectedInvoice">
+    <span class="badge">{{invoice.Id}}</span>
+    <span>
+          {{invoice.Id}} 
+          {{invoice.DFC}}
+          {{invoice.DLC}} 
+          {{invoice.User}} 
+          {{invoice.Did}} 
+          {{invoice.Pid}} 
+          {{invoice.Total}} 
+
+      </span>
+    <button class="delete"
+      (click)="delete(invoice); $event.stopPropagation()">x</button>
+  </li>
+</ul>

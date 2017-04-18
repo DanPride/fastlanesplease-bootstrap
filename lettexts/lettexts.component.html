@@ -1,0 +1,195 @@
+<div class="container">	
+<div *ngIf="selectedLettext" class="selectedLettext">
+<div class="row">
+	<div class="card text-xs-center">
+		<div class="card-block">	
+            <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedLettext.Letter}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLettext.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLettext.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLettext.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLettext.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                 <label>Letter: </label>
+                <input [(ngModel)]="selectedLettext.Letter" placeholder="Letter"/>
+                </fieldset>
+                <fieldset class="form-group">
+                    <label>Did: </label>
+                    <input [(ngModel)]="selectedLettext.Did" placeholder="Did"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Lang: </label>
+                    <input [(ngModel)]="selectedLettext.Lang" placeholder="Lang"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>LetLangDid: </label>
+                    <input [(ngModel)]="selectedLettext.LetLangDid" placeholder="LetLangDid"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Off: </label>
+                    <input [(ngModel)]="selectedLettext.Off" placeholder="Off"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Code: </label>
+                    <input [(ngModel)]="selectedLettext.Code" placeholder="Code"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Sub1: </label>
+                    <input [(ngModel)]="selectedLettext.Sub1" placeholder="Sub1"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Sub2: </label>
+                    <input [(ngModel)]="selectedLettext.Sub2" placeholder="Sub2"/>
+                </fieldset> 
+                    <fieldset class="form-group">
+                    <label>Sub3: </label>
+                    <input [(ngModel)]="selectedLettext.Sub3" placeholder="Sub3"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H1: </label>
+                    <input [(ngModel)]="selectedLettext.H1" placeholder="H1"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H2: </label>
+                    <input [(ngModel)]="selectedLettext.H2" placeholder="H2"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H3: </label>
+                    <input [(ngModel)]="selectedLettext.H3" placeholder="H3"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H4: </label>
+                    <input [(ngModel)]="selectedLettext.H4" placeholder="H4"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H5: </label>
+                    <input [(ngModel)]="selectedLettext.H5" placeholder="H5"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H6: </label>
+                    <input [(ngModel)]="selectedLettext.H6" placeholder="H6"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H7: </label>
+                    <input [(ngModel)]="selectedLettext.H7" placeholder="H7"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H8: </label>
+                    <input [(ngModel)]="selectedLettext.H8" placeholder="H8"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H9: </label>
+                    <input [(ngModel)]="selectedLettext.H9" placeholder="H9"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H10: </label>
+                    <input [(ngModel)]="selectedLettext.H10" placeholder="H10"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H11: </label>
+                    <input [(ngModel)]="selectedLettext.H11" placeholder="H11"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H12: </label>
+                    <input [(ngModel)]="selectedLettext.H12" placeholder="H12"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H13: </label>
+                    <input [(ngModel)]="selectedLettext.H13" placeholder="H13"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H14: </label>
+                    <input [(ngModel)]="selectedLettext.H14" placeholder="H14"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>H15: </label>
+                    <input [(ngModel)]="selectedLettext.H15" placeholder="H15"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T1: </label>
+                    <input [(ngModel)]="selectedLettext.T1" placeholder="T1"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T2: </label>
+                    <input [(ngModel)]="selectedLettext.T2" placeholder="T2"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T3: </label>
+                    <input [(ngModel)]="selectedLettext.T3" placeholder="T3"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T4: </label>
+                    <input [(ngModel)]="selectedLettext.T4" placeholder="T4"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T5: </label>
+                    <input [(ngModel)]="selectedLettext.T5" placeholder="T5"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T6: </label>
+                    <input [(ngModel)]="selectedLettext.T6" placeholder="T6"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T7: </label>
+                    <input [(ngModel)]="selectedLettext.T7" placeholder="T7"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T8: </label>
+                    <input [(ngModel)]="selectedLettext.T8" placeholder="T8"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T9: </label>
+                    <input [(ngModel)]="selectedLettext.T9" placeholder="T9"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>T10: </label>
+                    <input [(ngModel)]="selectedLettext.T10" placeholder="T10"/>
+                </fieldset>
+                    <fieldset class="form-group">
+                    <label>Letter: </label>
+                    <input [(ngModel)]="selectedLettext.Letter" placeholder="Letter"/>
+                </fieldset>
+            <button class="btn btn-warning"  (click)="onDeSelect()">View lettext</button>
+            <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedLettext">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Letter or DomainId:</label><input #lettextSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Letter" />
+             <button class="btn btn-danger" (click)="add(lettextSearch.value)"> Add </button>
+      </div>
+   <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+  <tr *ngFor="let lettext of lettexts" (click)="onSelect(lettext)"
+      [class.selected]="lettext === selectedLettext" class="list-group-item">
+        <div *ngIf!="appservice.admin">
+        <td class="Id"><b>{{lettext.Id}}</b></td>
+        <td class="Id"><b>{{lettext.Letter}}</b></td>
+        <td class="User">{{lettext.Did}}</td>
+        <td class="DFC">{{lettext.Lang}}</td>
+        <td class="Did">{{lettext.LangLetDid}}</td>
+        <td class="Did">{{lettext.Off}}</td>
+        <td class="Did">{{lettext.Code}}</td>
+        <td class="Did">{{lettext.Sub1}}</td>
+     <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+                        </div>
+
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>
+

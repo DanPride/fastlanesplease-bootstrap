@@ -1,0 +1,90 @@
+<div class="container">	
+  <div class="row">
+  <div *ngIf="selectedPlace" class="selectedplace">
+       <div class="container">
+      <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+          <div class="card-header">
+            {{selectedPlace.Name}}<br>
+            Id: {{selectedPlace.Id}}   First: {{selectedPlace.DFC | date}}   Last: {{selectedPlace.DLC | date}}   User: {{selectedPlace.User}}
+        </div>
+      <fieldset class="form-group">
+            <label>Name: </label>
+            <input [(ngModel)]="selectedPlace.Name" placeholder="Name"/>
+      </fieldset>
+      <fieldset class="form-group">
+          <label>Date: </label>
+          <input [(ngModel)]="selectedPlace.EventDate" placeholder="Date" />
+    </fieldset>
+      <fieldset class="form-group">
+            <label>MapAddress: </label>
+            <input [(ngModel)]="selectedPlace.MapAddress" placeholder="MapAddress" />
+       </fieldset>
+      <fieldset class="form-group">
+          <label>Country: </label>
+          <input [(ngModel)]="selectedPlace.Country" placeholder="MapAddress" />
+      </fieldset>
+      <fieldset class="form-group">
+            <label>Did: </label>
+            <input [(ngModel)]="selectedPlace.Did" placeholder="MapAddress" />
+     </fieldset>
+      <fieldset class="form-group">
+            <label>Pid: </label>
+            <input [(ngModel)]="selectedPlace.Pid" placeholder="MapAddress" />
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Lat: </label>
+        <input [(ngModel)]="selectedPlace.Lat" placeholder="Lat" />
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Lng: </label>
+        <input [(ngModel)]="selectedPlace.Lng" placeholder="Lng" />
+    </fieldset>
+      <fieldset class="form-group">
+        <label>GeoType: </label>
+        <input [(ngModel)]="selectedPlace.GeoType" placeholder="GeoType" />
+      </fieldset>
+      <fieldset class="form-group">
+        <label>GeoQual: </label>
+        <input [(ngModel)]="selectedPlace.GeoQual" placeholder="GeoQual" />
+     </fieldset>
+      <fieldset class="form-group">
+          <label>GeoSource: </label>
+          <input [(ngModel)]="selectedPlace.GeoSource" placeholder="GeoSource" />
+    </fieldset>
+      <fieldset class="form-group">
+        <label>GeoPlaceId: </label>
+        <input [(ngModel)]="selectedPlace.GeoPlaceId" placeholder="GeoPlaceId" />
+  </fieldset>
+  
+  <button class="btn btn-warning"  (click)="onDeSelect()">Back</button>
+  <button class="btn btn-success"  (click)="onDeSelect()">Save</button>
+ </div></div></div></div></div>
+
+ <div *ngIf!="selectedPlace">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Id or Name:</label><input #placeSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Place Name" />
+             <button class="btn btn-danger" (click)="add(placeSearch.value)"> Add </button>
+      </div>
+<div class="table-responsive">
+  <table class="table">
+  <tbody>
+  <tr *ngFor="let place of places" (click)="onSelect(place)"
+      [class.selected]="place === selectedPlace" class="list-group-item">
+				  <td class="Id">{{place.Id}}</td> 
+          <td class="Referer"><b>{{place.Pid}}</b><br>{{place.Did}}</td> 
+          <td class="DFC">{{place.DFC | date}}<br>{{place.DLC | date}}</td> 
+          <td class="DFC">{{place.User}}<br>{{place.Country}}</td> 
+          <td class="Referer">{{place.GeoSource}}<br>{{place.GeoPlaceId}}</td>
+          <td class="Referer">{{place.Lat}}<br>{{place.Lng}}</td>
+          <td class="Referer">{{place.GeoType}}<br>{{place.GeoQual}}</td>
+          <td class="Referer">{{place.Name}}</td>
+          <td class="Referer">{{place.MapAddress}}</td>
+      	<td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td>
+    </tr>
+</tbody>
+</table>
+</div></div></div></div></div>

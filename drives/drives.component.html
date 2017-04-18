@@ -1,0 +1,164 @@
+<div *ngIf="selectedDrive" class="selecteddrive">
+      <div class="container">
+      <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+            {{selectedDrive.DriveFromName}}<br>
+          {{selectedDrive.Id}} {{selectedDrive.DFC | date}} {{selectedDrive.DLC | date}} {{selectedDrive.User}}
+          </div> 
+      <fieldset class="form-group">
+        <label>Id: </label>
+        <input [(ngModel)]="selectedDrive.Id" placeholder="Id"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DFC: </label>
+        <input [(ngModel)]="selectedDrive.DFC" placeholder="DFC"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DLC: </label>
+        <input [(ngModel)]="selectedDrive.DLC" placeholder="DLC"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>User: </label>
+        <input [(ngModel)]="selectedDrive.User" placeholder="User"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Did: </label>
+        <input [(ngModel)]="selectedDrive.Did" placeholder="Did"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Pid: </label>
+        <input [(ngModel)]="selectedDrive.Pid" placeholder="Pid"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>SchedId: </label>
+        <input [(ngModel)]="selectedDrive.SchedId" placeholder="SchedId"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>Processed: </label>
+        <input [(ngModel)]="selectedDrive.Processed" placeholder="Processed"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>PO: </label>
+        <input [(ngModel)]="selectedDrive.PO" placeholder="PO"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFromId: </label>
+        <input [(ngModel)]="selectedDrive.DriveFromId" placeholder="DriveFromId"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFromName: </label>
+        <input [(ngModel)]="selectedDrive.DriveFromName" placeholder="DriveFromName"/>
+  </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFromLat: </label>
+        <input [(ngModel)]="selectedDrive.DriveFromLat" placeholder="DriveFromLat"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFromLng: </label>
+        <input [(ngModel)]="selectedDrive.DriveFromLng" placeholder="DriveFromLng"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveToId: </label>
+        <input [(ngModel)]="selectedDrive.DriveToId" placeholder="DriveToId"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveToName: </label>
+        <input [(ngModel)]="selectedDrive.DriveToName" placeholder="DriveToName"/>
+  </fieldset>
+      <fieldset class="form-group">
+        <label>DriveToLat: </label>
+        <input [(ngModel)]="selectedDrive.DriveToLat" placeholder="DriveToLat"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveToLng: </label>
+        <input [(ngModel)]="selectedDrive.DriveToLng" placeholder="DriveToLng"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveDistance: </label>
+        <input [(ngModel)]="selectedDrive.DriveDistance" placeholder="DriveDistance"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveDuration: </label>
+        <input [(ngModel)]="selectedDrive.DriveDuration" placeholder="DriveDuration"/>
+   </fieldset>
+      <fieldset class="form-group">
+        <label>DriveDate: </label>
+        <input [(ngModel)]="selectedDrive.DriveDate" placeholder="DriveDate"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveStartTime: </label>
+        <input [(ngModel)]="selectedDrive.DriveStartTime" placeholder="DriveStartTime"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveEndTime: </label>
+        <input [(ngModel)]="selectedDrive.DriveEndTime" placeholder="DriveEndTime"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveStart: </label>
+        <input [(ngModel)]="selectedDrive.DriveStart" placeholder="DriveStart"/>
+    </fieldset>
+      <fieldset class="form-group">
+        <label>DriveEnd: </label>
+        <input [(ngModel)]="selectedDrive.DriveEnd" placeholder="DriveEnd"/>
+   </fieldset>
+    <fieldset class="form-group">
+        <label>DriveMax: </label>
+        <input [(ngModel)]="selectedDrive.DriveMax" placeholder="DriveMax"/>
+   </fieldset>
+    <fieldset class="form-group">
+        <label>DriveMin: </label>
+        <input [(ngModel)]="selectedDrive.DriveMin" placeholder="DriveMin"/>
+    </fieldset>
+    <fieldset class="form-group">
+        <label>DriveRate: </label>
+        <input [(ngModel)]="selectedDrive.DriveRate" placeholder="DriveRate"/>
+  </fieldset>
+  <fieldset class="form-group">
+        <label>DriveFee: </label>
+        <input [(ngModel)]="selectedDrive.DriveFee" placeholder="DriveFee"/>
+  </fieldset>
+ <button (click)="onDeSelect()" class="btn btn-success">View DrivesList</button>
+ <button (click)="onDeSelect()" class="btn btn-caution">View Drive</button>
+</div></div></div></div></div>
+
+<div *ngIf!="selectedDrive">
+  <div class="container">	
+     <div class="row">
+        <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search Drives by User Id or DriveFromName:</label> 
+              <input #driveSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+          </div>
+          <div class="table-responsive">
+                <table class="table table-striped">
+                    <tbody>
+  <tr *ngFor="let drive of drives" (click)="onSelect(drive)"
+      [class.selected]="drive === selectedDrive" class="list-group-item">
+          <div *ngIf!="appservice.admin">
+              <td class="Id"><b>{{drive.Id}}</b></td>
+              <td class="Id"><b>{{drive.Pid}}</b><br>{{drive.Did}}</td>
+              <td class="Name">{{drive.DriveFromName}}<br>{{drive.DriveToName}}</td>
+              <td class="DFC">{{drive.DriveDate | date}}</td>
+              <td class="Time">{{drive.DriveStartTime}}<br>{{drive.DriveEndTime}}</td>
+              <td class="Rate">{{drive.DriveMin}}<br>{{drive.DriveMax}}</td>
+              <td class="Id">{{drive.DriveDistance}}<br>{{drive.DriveDuration}}</td>
+              <td class="Rate">{{drive.DriveRate}}<br>{{drive.DriveFee | currency:'USD':true}}</td>
+              <td class="button"><button class="btn-sm btn-danger" (click)="delete(drive); $event.stopPropagation()">x</button></td>
+          </div>
+          <div *ngIf="appservice.admin">
+              <td class="Id"><b>{{drive.Id}}</b></td>
+              <td class="DateText">{{drive.DFC}}<br>{{drive.DLC}}</td>
+                <td class="Id">*{{drive.Processed}}*<br>{{drive.SchedId}}</td>
+              <td class="Id">{{drive.PO}}<br>{{drive.User}}</td>
+              <td class="Rate">{{drive.DriveFromId}}</td>
+              <td class="Lat">{{drive.DriveFromLat}}<br>{{drive.DriveFromLng}}</td>
+              <td class="Rate">{{drive.DriveToId}}</td>
+              <td class="Lat">{{drive.DriveToLat}}<br>{{drive.DriveToLng}}</td>
+              <td class="TimeNum">{{drive.DriveStart}}<br>{{drive.DriveEnd}}</td>
+              <td class="button"><button class="btn-sm btn-danger" (click)="delete(drive); $event.stopPropagation()">x</button></td>
+              </div>
+ </tr></tbody></table>
+        </div>
+</div></div></div></div>

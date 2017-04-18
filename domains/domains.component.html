@@ -1,0 +1,234 @@
+ <div class="container">	
+<div *ngIf="selectedDomain" class="selectedDomain">
+       <div class="container">
+         <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+                    {{selectedDomain.Domain}}<br>
+                    {{selectedDomain.Id}} {{selectedDomain.DFC | date}} {{selectedDomain.DLC | date}} {{selectedDomain.User}}
+				</div>
+      <fieldset class="form-group">
+        <label>Lang: </label>
+        <input [(ngModel)]="selectedDomain.Lang" placeholder="Lang"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Country: </label>
+        <input [(ngModel)]="selectedDomain.Country" placeholder="Country"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Pid: </label>
+        <input [(ngModel)]="selectedDomain.Pid" placeholder="Pid"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Sid: </label>
+        <input [(ngModel)]="selectedDomain.Sid" placeholder="Sid"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>ImgD: </label>
+        <input [(ngModel)]="selectedDomain.ImgD" placeholder="ImgD"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Confirmed: </label>
+        <input [(ngModel)]="selectedDomain.Confirmed" placeholder="Confirmed"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Active: </label>
+        <input [(ngModel)]="selectedDomain.Active" placeholder="Active"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>Domain: </label>
+        <input [(ngModel)]="selectedDomain.Domain" placeholder="Domain"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>MatchPrefs: </label>
+        <input [(ngModel)]="selectedDomain.MatchPrefs" placeholder="MatchPrefs"/>
+       </fieldset> 
+      <fieldset class="form-group">
+        <label>Title: </label>
+        <input [(ngModel)]="selectedDomain.Title" placeholder="Title"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Keywords: </label>
+        <input [(ngModel)]="selectedDomain.Keywords" placeholder="Keywords"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Descrip: </label>
+        <input [(ngModel)]="selectedDomain.Descrip" placeholder="Descrip"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Radius: </label>
+        <input [(ngModel)]="selectedDomain.Radius" placeholder="Radius"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>ListDaysOut: </label>
+        <input [(ngModel)]="selectedDomain.ListDaysOut" placeholder="ListDaysOut"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Owner: </label>
+        <input [(ngModel)]="selectedDomain.Owner" placeholder="Owner"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Email: </label>
+        <input [(ngModel)]="selectedDomain.Email" placeholder="Email"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Pass: </label>
+        <input [(ngModel)]="selectedDomain.Pass" placeholder="Pass"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>SiteName: </label>
+        <input [(ngModel)]="selectedDomain.SiteName" placeholder="SiteName"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>FaceBookId: </label>
+        <input [(ngModel)]="selectedDomain.FaceBookId" placeholder="FaceBookId"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GooglePlusId: </label>
+        <input [(ngModel)]="selectedDomain.GooglePlusId" placeholder="GooglePlusId"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>TwitterId: </label>
+        <input [(ngModel)]="selectedDomain.TwitterId" placeholder="TwitterId"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>FaceBookSecret: </label>
+        <input [(ngModel)]="selectedDomain.FaceBookSecret" placeholder="FaceBookSecret"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GooglePlusSecret: </label>
+        <input [(ngModel)]="selectedDomain.GooglePlusSecret" placeholder="GooglePlusSecret"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>TwitterSecret: </label>
+        <input [(ngModel)]="selectedDomain.TwitterSecret" placeholder="TwitterSecret"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Phone: </label>
+        <input [(ngModel)]="selectedDomain.Phone" placeholder="Phone"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>MapAddress: </label>
+        <input [(ngModel)]="selectedDomain.MapAddress" placeholder="MapAddress"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Lat: </label>
+        <input [(ngModel)]="selectedDomain.Lat" placeholder="Lat"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Lng: </label>
+        <input [(ngModel)]="selectedDomain.Lng" placeholder="Lng"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GeoType: </label>
+        <input [(ngModel)]="selectedDomain.GeoType" placeholder="GeoType"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GeoQual: </label>
+        <input [(ngModel)]="selectedDomain.GeoQual" placeholder="GeoQual"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GeoSource: </label>
+        <input [(ngModel)]="selectedDomain.GeoSource" placeholder="GeoSource"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>GeoPlaceId: </label>
+        <input [(ngModel)]="selectedDomain.GeoPlaceId" placeholder="GeoPlaceId"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Website: </label>
+        <input [(ngModel)]="selectedDomain.Website" placeholder="Website"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Footer: </label>
+        <input [(ngModel)]="selectedDomain.Footer" placeholder="Footer"/>
+       </fieldset>
+       <fieldset class="form-group">
+        <label>Styles: </label>
+        <input [(ngModel)]="selectedDomain.Styles" placeholder="Styles"/>
+       </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View Domain</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedDomain">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Id:</label><input #DomainSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Domain" />
+             <button class="btn btn-danger" (click)="add(domainSearch.value)"> Add </button>
+      </div>
+   <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+  <tr *ngFor="let domain of domains" (click)="onSelect(domain)"
+      [class.selected]="domain === selectedDomain" class="list-group-item">
+        <div *ngIf!="appservice.admin">
+          <td class="Id"><b>{{domain.Id}}</b></td>
+             <td class="Id"><b>{{domain.Lang}}</b></td>
+          <td class="DFC">{{domain.DFC | date}}<br>{{domain.DLC | date}}</td>
+          <td class="User">{{domain.Country}}</td>
+          <td class="Did">{{domain.Pid}}</td>
+          <td class="Did">{{domain.Sid}}</td>
+          <td class="Did">{{domain.Active}}</td>
+          <td class="Did">{{domain.Domain}}</td>
+          </div>
+         <div *ngIf="appservice.admin">
+          <td class="Did">{{domain.Pid}}</td>
+          <td class="Did">{{domain.Active}}</td>
+          <td class="Did">{{domain.Domain}}</td>
+      <td><button class="btn-xs btn-danger"
+                    (click)="delete(domain); $event.stopPropagation()">x</button></td>
+                        </div>
+
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>
+
+<!--{{domain.DFC}} 
+{{domain.DLC}} 
+{{domain.User}} 
+{{domain.Lang}} 
+{{domain.Country}} 
+{{domain.Pid}}
+{{domain.Sid}} 
+{{domain.ImgD}} 
+{{domain.Confirmed}} 
+{{domain.Active}}
+{{domain.Domain}} 
+{{domain.MatchPrefs}}
+{{domain.Title}} 
+{{domain.Keywords}} 
+{{domain.Descrip}} 
+{{domain.Radius}} 
+{{domain.ListDaysOut}} 
+{{domain.Owner}} 
+{{domain.Email}} 
+{{domain.Pass}} 
+{{domain.SiteName}} 
+{{domain.FaceBookId}} 
+{{domain.GooglePlusId}} 
+{{domain.TwitterId}} 
+{{domain.FaceBookSecret}} 
+{{domain.GooglePlusSecret}} 
+{{domain.TwitterSecret}} 
+{{domain.Phone}} 
+{{domain.MapAddress}} 
+{{domain.Lat}} 
+{{domain.Lng}} 
+{{domain.GeoType}} 
+{{domain.GeoQual}} 
+{{domain.GeoSource}} 
+{{domain.GeoPlaceId}} 
+{{domain.Website}} 
+{{domain.Footer}} 
+{{domain.Styles}}  --> 
+
+
+
+
+
+
+

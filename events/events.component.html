@@ -1,0 +1,95 @@
+<div class="container">	
+    <div *ngIf="selectedEvent" class="selectedevent">
+       <div class="row">
+        <div class="card text-xs-center">
+             <div class="card-block">
+                <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedEvent.EventName}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedEvent.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedEvent.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedEvent.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedEvent.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Name: </label>
+                      <input [(ngModel)]="selectedEvent.EventName" placeholder="Name"/>
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Date: </label>
+                      <input [(ngModel)]="selectedEvent.EventDate" placeholder="Date" />
+                  </fieldset>
+                  <fieldset class="form-group  col-md-12">
+                        <label>Description: </label>
+                        <input [(ngModel)]="selectedEvent.Descrip" placeholder="Description" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>StartTime: </label>
+                        <input [(ngModel)]="selectedEvent.StartTime" placeholder="Start Time" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>EndTime: </label>
+                          <input [(ngModel)]="selectedEvent.EndTime" placeholder="End Time" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>Map Address: </label>
+                        <input [(ngModel)]="selectedEvent.MapAddress" placeholder="Map Address" />
+                </fieldset>
+                <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+                <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+<div *ngIf!="selectedEvent">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search Events by Id or Text:</label> <input #eventSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(eventSearch.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                 <tr *ngFor="let event of events" (click)="onSelect(event)"
+                 [class.selected]="event === selectedEvent" class="list-group-item">
+                        <div *ngIf!="appservice.admin">
+                        <td class="Id"><b>{{event.Id}}</b></td>
+                        <td class="EventName">{{event.EventName}} </td>
+                           <td class="Phone">{{event.Phone}}<br>{{event.EventDate | date}}</td>
+                        <td class="StartTime">{{event.StartTime}}<br>{{event.EndTime}} </td>
+                        <td class="SiteName">{{event.SiteName}} </td>
+                        <td class="MapAddress"> {{event.MapAddress}}</td>
+                     
+                        <td class="Invitation">{{event.Website}}</td>
+                        <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+                        </div><div *ngIf="appservice.admin">
+                        <td class="Id"><b>{{event.Id}}</b></td>
+                        <td class="DFC">{{event.DFC | date}}<br>{{event.DLC | date}}</td>
+                        <td class="User">{{event.User}}<br>{{event.Country}} </td>
+                        <td class="Did">{{event.Did}}<br><b>{{event.Pid}}</b></td>
+                        <td class="Did">{{event.Fid}}<br>{{event.ImgE}}</td>
+                        <td class="Route"> {{event.Route}}<br>{{event.GeoSource}}</td>
+                        <td class="Lat"> {{event.Lat}}<br>{{event.Lng}}</td>
+                        <td class="GeoType"> {{event.GeoType}}<br>{{event.GeoQual}}</td>
+                        <td class="GeoType">{{event.GeoPlaceId}}</td>
+                        <td class="GeoType"> {{event.Invitation}}</td>
+                        <td class="SearchTerms"> {{event.SearchTerms}}</td>
+                        <td class="Descrip"> {{event.Descrip}}</td>
+                        <td><button class="btn-xs btn-danger"
+                    (click)="delete(event); $event.stopPropagation()">x</button></td>
+                        </div>
+
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>
+
+

@@ -1,0 +1,8 @@
+.table{
+    width:300px;
+    height: 300px;
+    padding: 5px;
+}
+.floattable{
+    float:left;
+}

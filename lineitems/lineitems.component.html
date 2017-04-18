@@ -1,0 +1,33 @@
+<p>
+  lineitems list!
+</p>
+
+<ul class="lineitems">
+  <li *ngFor="let lineitem of lineitems" (click)="onSelect(lineitem)"
+      [class.selected]="lineitem === selectedLineitem">
+    <span class="badge">{{lineitem.Id}}</span>
+    <span>
+        {{lineitem.Id}}
+        {{lineitem.DFC}} 
+        {{lineitem.DLC}} 
+        {{lineitem.User}} 
+        {{lineitem.IId}} 
+        {{lineitem.Days}}
+        {{lineitem.Hits}}
+        {{lineitem.Valid}} 
+        {{lineitem.Paid}}
+        {{lineitem.Closed}} 
+        {{lineitem.Amt}}
+        {{lineitem.Did}}
+        {{lineitem.Pid}} 
+        {{lineitem.PostUrl}} 
+        {{lineitem.PostText}}  
+      </span>
+    <button class="delete"
+      (click)="delete(lineitem); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+
+
+
+

@@ -1,0 +1,161 @@
+  <div class="container">	
+    <div *ngIf="selectedUser" class="selectedEvent">
+       <div class="row">
+		    	<div class="card text-xs-center">
+			      	<div class="card-block">
+				      	<div class="card-header">
+                    {{selectedUser.UserName}}<br>
+                    {{selectedUser.Id}} {{selectedUser.DFC | date}} {{selectedUser.DLC | date}} {{selectedUser.User}}
+      <fieldset class="form-group">
+        <label>Lang: </label>
+        <input [(ngModel)]="selectedUser.Lang" placeholder="Lang"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Acct: </label>
+        <input [(ngModel)]="selectedUser.Acct" placeholder="Acct"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Country: </label>
+        <input [(ngModel)]="selectedUser.Country" placeholder="Country"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Did: </label>
+        <input [(ngModel)]="selectedUser.Did" placeholder="Did"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Admin: </label>
+        <input [(ngModel)]="selectedUser.Admin" placeholder="Admin"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>LangEd: </label>
+        <input [(ngModel)]="selectedUser.LangEd" placeholder="LangEd"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>Sales: </label>
+        <input [(ngModel)]="selectedUser.Sales" placeholder="Sales"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>UserName: </label>
+        <input [(ngModel)]="selectedUser.UserName" placeholder="UserName"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Pass: </label>
+        <input [(ngModel)]="selectedUser.Pass" placeholder="Pass"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Email: </label>
+        <input [(ngModel)]="selectedUser.Email" placeholder="Email"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Agent: </label>
+        <input [(ngModel)]="selectedUser.Agent" placeholder="Agent"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Source: </label>
+        <input [(ngModel)]="selectedUser.Source" placeholder="Source"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>IP: </label>
+        <input [(ngModel)]="selectedUser.IP" placeholder="IP"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label for="followups">Followups: </label>
+        <input [(ngModel)]="selectedUser.Followups" placeholder="Followups" id="followups" />
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveMax: </label>
+        <input [(ngModel)]="selectedUser.DriveMax" placeholder="DriveMax"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveMin: </label>
+        <input [(ngModel)]="selectedUser.DriveMin" placeholder="DriveMin"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveRate: </label>
+        <input [(ngModel)]="selectedUser.DriveRate" placeholder="DriveRate"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFee: </label>
+        <input [(ngModel)]="selectedUser.DriveFee" placeholder="DriveFee"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MapPrefs: </label>
+        <input [(ngModel)]="selectedUser.MapPrefs" placeholder="MapPrefs"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MailPrefs: </label>
+        <input [(ngModel)]="selectedUser.MailPrefs" placeholder="MailPrefs"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MatchPrefs: </label>
+        <input [(ngModel)]="selectedUser.MatchPrefs" placeholder="MatchPrefs"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>LangBar: </label>
+        <input [(ngModel)]="selectedUser.LangBar" placeholder="LangBar"/>
+     </fieldset>
+      <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+      <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+ <div *ngIf!="selectedUser">
+    <div class="container">	
+        <div class="row">
+        <div class="card text-xs-center">
+            <div class="card-block">
+              <label>Search by Id or Email:</label> <input #userSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(userSearch.value)"> Add </button>
+         </div>
+
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                 <tr *ngFor="let user of users" (click)="onSelect(user)"
+              [class.selected]="user === selectedUser" class="list-group-item">
+                <div *ngIf!="appservice.admin">
+                  <td class="Id"><b>{{user.Id}}</b></td>
+                  <td class="Id">{{user.UserName}}</td>
+                  <td class="Id">{{user.Email}}</td>
+                  <td class="Id">{{user.IP}}</td>
+                  <td class="Id">{{user.Followups}}</td>
+                  <td class="Id">{{user.DriveMax}}</td>
+                  <td class="Id">{{user.DriveMin}}</td>
+                  <td class="Id">{{user.DriveRate}}</td>
+                  <td class="Id">{{user.DriveFee}}</td>
+                  <td class="Id">{{user.MapPrefs}}</td>
+                  <td class="Id">{{user.MailPrefs}}</td>
+                  <td class="Id">{{user.MatchPrefs}}</td>
+                  <td class="Id">{{user.LangBar}}</td>
+                   <td><button class="btn-xs btn-danger" (click)="delete(user); $event.stopPropagation()">x</button></td>
+                    <td><button class="btn-xs btn-success" (click)="gotoDetail(user); $event.stopPropagation()">Y</button></td>
+             </div>
+                <div *ngIf="appservice.admin">
+                    <td class="Id"><b>{{user.Id}}</b></td>
+                    <td class="DFC">{{user.DFC | date}}<br>{{user.DLC | date}}</td>
+                    <td class="Id">{{user.User}}</td>
+                    <td class="Id">{{user.Lang}}</td>
+                    <td class="Id">{{user.Acct}}</td>
+                    <td class="Id"> {{user.Country}}</td>
+                    <td class="Id">{{user.Did}}</td>
+                    <td class="Id">{{user.Admin}}</td>
+                    <td class="Id">{{user.LangEd}}</td>
+                    <td class="Id">{{user.Sales}}</td>
+                    <td class="Id">{{user.EmailConfirm}}</td>
+                <!--    <td class="Id">{{user.Agent}}</td>
+                    <td class="Id">{{user.Source}}</td>-->
+                    <td><button class="btn-xs btn-danger" (click)="delete(event); $event.stopPropagation()">x</button></td>
+                     </div>
+                        <div *ngIf="false">
+                    <!--      <td class="Id">{{user.Pass}}</td>-->
+                        </div>
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>
+
+
+
+
+
+
+    

@@ -1,0 +1,85 @@
+
+<div class="container">	
+    <div *ngIf="selectedPopup" class="selectedPopup">
+       <div class="row">
+        <div class="card text-xs-center">
+             <div class="card-block">
+                <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedPopup.Popup}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedPopup.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedPopup.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedPopup.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedPopup.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Popup: </label>
+                      <input [(ngModel)]="selectedPopup.Popup" placeholder="Popup"/>
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>PopupItem: </label>
+                      <input [(ngModel)]="selectedPopup.PopupItem" placeholder="PopupItem" />
+                  </fieldset>
+                  <fieldset class="form-group  col-md-12">
+                        <label>PopupValue: </label>
+                        <input [(ngModel)]="selectedPopup.PopupValue" placeholder="PopupValue" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>PopupOrder: </label>
+                        <input [(ngModel)]="selectedPopup.PopupOrder" placeholder="PopupOrder" />
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                        <label>Country: </label>
+                          <input [(ngModel)]="selectedPopup.Country" placeholder="Country" />
+                </fieldset>
+               
+                <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+                <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+<div *ngIf!="selectedPopup">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search Popups by Id or Popup:</label> <input #popupSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(Search.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+                 <tr *ngFor="let popup of popups" (click)="onSelect(Popup)"
+                 [class.selected]="popup === selectedPopup" class="list-group-item">
+                        <div *ngIf!="appservice.admin">
+                        <td class="Id"><b>{{popup.Id}}</b></td>
+                        <td class="popupName">{{popup.Popup}} </td>
+                        <td class="PopupItem">{{popup.PopupItem}}</td>
+                        <td class="PopupValue">{{popup.PopupValue}}</td>
+                        <td class="PopupOrder">{{popup.PopupOrder}} </td>
+                        <td class="Country">{{popup.Country}} </td>
+                        <td><button class="btn-xs btn-danger"
+                    (click)="delete(popup); $event.stopPropagation()">x</button></td>
+                        </div><div *ngIf="appservice.admin">
+                        <td class="Id"><b>{{popup.Id}}</b></td>
+                        <td class="DFC">{{popup.DFC}}<br>{{popup.DLC}}</td>
+                        <td class="User">{{popup.User}}<br>{{popup.Country}} </td>
+                        <td class="popupName">{{popup.Popup}} </td>
+                        <td class="PopupItem">{{popup.PopupItem}}</td>
+                        <td class="PopupValue">{{popup.PopupValue}}</td>
+                        <td class="PopupOrder">{{popup.PopupOrder}} </td>
+                      <td><button class="btn-xs btn-danger"
+                    (click)="delete(popup); $event.stopPropagation()">x</button></td>
+                        </div>
+                </tr>
+            </tbody></table>
+        </div>
+</div></div></div></div>
+
+

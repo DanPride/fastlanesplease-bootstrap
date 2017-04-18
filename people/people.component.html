@@ -1,0 +1,233 @@
+  <div class="container">
+    <div *ngIf="selectedPerson" class="selectedPerson">
+         <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+                    {{selectedPerson.Name}}<br>
+                    {{selectedPerson.Id}} {{selectedPerson.DFC | date}} {{selectedPerson.DLC | date}} {{selectedPerson.Person}}
+				</div>
+      <fieldset class="form-group">
+        <label>Did: </label>
+        <input [(ngModel)]="selectedPerson.Did" placeholder="Did"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>ImgP: </label>
+        <input [(ngModel)]="selectedPerson.ImgP" placeholder="ImgP"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>ImgV: </label>
+        <input [(ngModel)]="selectedPerson.ImgV" placeholder="ImgV"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Texting: </label>
+        <input [(ngModel)]="selectedPerson.Texting" placeholder="Texting"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Name: </label>
+        <input [(ngModel)]="selectedPerson.Name" placeholder="Name"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>H_Phone: </label>
+        <input [(ngModel)]="selectedPerson.H_Phone" placeholder="H_Phone"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>CellDom: </label>
+        <input [(ngModel)]="selectedPerson.CellDom" placeholder="CellDom"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>M_Phone: </label>
+        <input [(ngModel)]="selectedPerson.M_Phone" placeholder="M_Phone"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>CellValid: </label>
+        <input [(ngModel)]="selectedPerson.CellValid" placeholder="CellValid"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Lat: </label>
+        <input [(ngModel)]="selectedPerson.Lat" placeholder="Lat"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Lng: </label>
+        <input [(ngModel)]="selectedPerson.Lng" placeholder="Lng"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>GeoType: </label>
+        <input [(ngModel)]="selectedPerson.GeoType" placeholder="GeoType"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>GeoQual: </label>
+        <input [(ngModel)]="selectedPerson.GeoQual" placeholder="GeoQual"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>GeoSource: </label>
+        <input [(ngModel)]="selectedPerson.GeoSource" placeholder="GeoSource"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>GeoPlaceId: </label>
+        <input [(ngModel)]="selectedPerson.GeoPlaceId" placeholder="GeoPlaceId"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MapAddress: </label>
+        <input [(ngModel)]="selectedPerson.MapAddress" placeholder="MapAddress"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Descrip: </label>
+        <input [(ngModel)]="selectedPerson.Descrip" placeholder="Descrip"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>CSurf: </label>
+        <input [(ngModel)]="selectedPerson.CSurf" placeholder="CSurf"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>FaceBook: </label>
+        <input [(ngModel)]="selectedPerson.FaceBook" placeholder="FaceBook"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>GooglePlus: </label>
+        <input [(ngModel)]="selectedPerson.GooglePlus" placeholder="GooglePlus"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Twitter: </label>
+        <input [(ngModel)]="selectedPerson.Twitter" placeholder="Twitter"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Website: </label>
+        <input [(ngModel)]="selectedPerson.Website" placeholder="Website"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Logins: </label>
+        <input [(ngModel)]="selectedPerson.Logins" placeholder="Logins"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Acts: </label>
+        <input [(ngModel)]="selectedPerson.Acts" placeholder="Acts"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Places: </label>
+        <input [(ngModel)]="selectedPerson.Places" placeholder="Places"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>Named: </label>
+        <input [(ngModel)]="selectedPerson.Named" placeholder="Named"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>Rides: </label>
+        <input [(ngModel)]="selectedPerson.Rides" placeholder="Rides"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>Drives: </label>
+        <input [(ngModel)]="selectedPerson.Drives" placeholder="Drives"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>Runs: </label>
+        <input [(ngModel)]="selectedPerson.Runs" placeholder="Runs"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>Scheds: </label>
+        <input [(ngModel)]="selectedPerson.Scheds" placeholder="Scheds"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>Hits: </label>
+        <input [(ngModel)]="selectedPerson.Hits" placeholder="Hits"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>EReset: </label>
+        <input [(ngModel)]="selectedPerson.EReset" placeholder="EReset"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>TCode: </label>
+        <input [(ngModel)]="selectedPerson.TCode" placeholder="TCode"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>TCode2: </label>
+        <input [(ngModel)]="selectedPerson.TCode2" placeholder="TCode2"/>
+      </fieldset>
+	    <fieldset class="form-group">
+        <label>EStop: </label>
+        <input [(ngModel)]="selectedPerson.EStop" placeholder="EStop"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>ETell: </label>
+        <input [(ngModel)]="selectedPerson.ETell" placeholder="ETell"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>EDRate: </label>
+        <input [(ngModel)]="selectedPerson.EDRate" placeholder="EDRate"/>
+      </fieldset>
+	   <fieldset class="form-group">
+        <label>ERRate: </label>
+        <input [(ngModel)]="selectedPerson.ERRate" placeholder="ERRate"/>
+      </fieldset>
+ <button (click)="onDeSelect()">Delete Person</button>
+ <button class="btn btn-danger" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+
+      <div *ngIf!="selectedPerson">
+          <div class="row">
+            <div class="card text-xs-center">
+                <div class="card-block">
+                  <label>Search by Id or Name:</label> <input #PersonSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Name" />
+                  <button class="btn btn-danger" (click)="add(iso639Search.value)"> Add </button>
+                </div>
+                <div class="table-responsive">
+                   <table class="table">
+                      <tbody>
+                    <tr *ngFor="let person of people" (click)="onSelect(person)"
+                      [class.selected]="person === selectedPerson" class="list-group-item">
+                    <div *ngIf!="appservice.admin">
+                        <td class="Id"><b>{{person.Id}}</b></td>
+                        <td class="Id">{{person.Logins}}</td>
+                        <td class="Id">{{person.Hits}}</td>
+                        <td class="Id">{{person.Acts}}</td>
+                        <td class="Id">{{person.Did}}</td>
+                        <td class="Id">{{person.CellDom}}</td>
+                        <td class="Id">{{person.Name}}</td>
+                        <td class="Id">{{person.H_Phone}}</td>
+                        <td class="Id">{{person.M_Phone}}</td>
+                      </div>
+                      <div *ngIf="appservice.admin">
+                      <td class="Id"><b>{{person.Id}}</b></td>
+                      <td class="Id">{{person.DFC}}</td>
+                      <td class="Id">{{person.DLC}}</td>
+                      <td class="Id">{{person.User}}</td>
+                      <td class="Id">{{person.ImgP}}</td>
+                      <td class="Id">{{person.ImgV}}</td>
+                      <td class="Id">{{person.Texting}}</td>
+                      <td class="Id">{{person.CellValid}}</td>
+                      <td class="Id">{{person.Lat}}</td>
+                      <td class="Id">{{person.Lng}}</td>
+                      <td class="Id">{{person.GeoType}}</td>
+                      <td class="Id">{{person.GeoQual}}</td>
+                      <td class="Id">{{person.GeoSource}}</td>
+                      <td class="Id">{{person.GeoPlaceId}}</td>
+                      <td class="Id">{{person.MapAddress}}</td>
+                      <td class="Id">{{person.Descrip}}</td>
+                      <td class="Id">{{person.CSurf}}</td>
+                      <td class="Id">{{person.FaceBook}}</td>
+                      <td class="Id">{{person.GooglePlus}}</td>
+                      <td class="Id">{{person.Twitter}}</td>
+                      <td class="Id">{{person.Website}}</td>
+                      <td class="Id">{{person.Logins}}</td>
+                      <td class="Id">{{person.Acts}}</td>
+                      <td class="Id">{{person.Places}}</td>
+                      <td class="Id">{{person.Named}}</td>
+                      <td class="Id">{{person.Rides}}</td>
+                      <td class="Id">{{person.Drives}}</td>
+                      <td class="Id">{{person.Runs}}</td>
+                      <td class="Id">{{person.Scheds}}</td>
+                      <td class="Id">{{person.Hits}}</td>
+                      <td class="Id">{{person.EReset}}</td>
+                      <td class="Id">{{person.TCode}}</td>
+                      <td class="Id">{{person.TCode2}}</td>
+                      <td class="Id">{{person.EStop}}</td>
+                      <td class="Id">{{person.ETell}}</td>
+                      <td class="Id">{{person.EDRate}}</td>
+                      <td class="Id">{{person.ERRate}}</td>
+                    <td><button class="btn-xs btn-danger" (click)="delete(iso639); $event.stopPropagation()">x</button></td>
+                    </div>
+              </tr>
+        </tbody>
+    </table>
+</div></div></div></div>

@@ -1,0 +1,50 @@
+<p>
+  feeds List!
+</p>
+<ul class="feeds">
+  <li *ngFor="let feed of feeds" (click)="onSelect(feed)"
+      [class.selected]="feed === selectedFeed">
+    <span class="badge">{{feed.Id}}</span>
+    <span>
+					{{feed.Id}} 
+					{{feed.DFC}}
+					{{feed.DLC}} 
+					{{feed.User}} 
+					{{feed.Country}}
+					{{feed.Did}}
+					{{feed.Pid}} 
+					{{feed.ImgE}} 
+					{{feed.EventName}} 
+					{{feed.SearchTerms}}
+					{{feed.Descrip}} 
+					{{feed.Radius}} 
+					{{feed.Route}} 
+					{{feed.ListDaysOut}} 
+					{{feed.EventDate}} 
+					{{feed.StartTime}} 
+					{{feed.EndTime}} 
+					{{feed.SiteName}} 
+					{{feed.Lat}} 
+					{{feed.Lng}}
+					{{feed.GeoType}} 
+					{{feed.GeoQual}} 
+					{{feed.GeoSource}} 
+					{{feed.GeoPlaceId}} 
+					{{feed.MapAddress}} 
+					{{feed.Phone}} 
+					{{feed.Website}} 
+					{{feed.M}} 
+					{{feed.T}} 
+					{{feed.W}} 
+					{{feed.Th}} 
+					{{feed.F}} 
+					{{feed.Sa}} 
+					{{feed.Su}} 
+      </span>
+    <button class="delete"
+      (click)="delete(feed); $event.stopPropagation()">x</button>
+  </li>
+</ul>
+
+
+  

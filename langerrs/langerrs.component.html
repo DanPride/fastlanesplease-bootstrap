@@ -1,0 +1,308 @@
+<div class="container">	
+    <div *ngIf="selectedLangErr" class="selectedLangErr">
+       <div class="row">
+        <div class="card text-xs-center">
+             <div class="card-block">
+                <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedLangErr.Lang}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangErr.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangErr.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangErr.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLangErr.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Lang: </label>
+                      <input [(ngModel)]="selectedLangErr.Lang" placeholder="Lang"/>
+                </fieldset>
+					   <fieldset class="form-group  col-md-12">
+                      <label>CellCodeInvalid: </label>
+                      <input [(ngModel)]="selectedLangErr.CellCodeInvalid" placeholder="CellCodeInvalid"/>
+              </fieldset>
+              <fieldset class="form-group  col-md-12">
+                      <label>CellCodeNoMatch: </label>
+                      <input [(ngModel)]="selectedLangErr.CellCodeNoMatch" placeholder="CellCodeNoMatch"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>CellProvider: </label>
+                      <input [(ngModel)]="selectedLangErr.CellProvider" placeholder="CellProvider"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>DeleteConflictMessage: </label>
+                      <input [(ngModel)]="selectedLangErr.DeleteConflictMessage" placeholder="DeleteConflictMessage"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>DriveLongest: </label>
+                      <input [(ngModel)]="selectedLangErr.DriveLongest" placeholder="DriveLongest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EnterDescrip: </label>
+                      <input [(ngModel)]="selectedLangErr.EnterDescrip" placeholder="EnterDescrip"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EnterDomain: </label>
+                      <input [(ngModel)]="selectedLangErr.EnterDomain" placeholder="EnterDomain"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailDup: </label>
+                      <input [(ngModel)]="selectedLangErr.EmailDup" placeholder="EmailDup"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailRequired: </label>
+                      <input [(ngModel)]="selectedLangErr.EmailRequired" placeholder="EmailRequired"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EmailReset: </label>
+                      <input [(ngModel)]="selectedLangErr.EmailReset" placeholder="EmailReset"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventDate: </label>
+                      <input [(ngModel)]="selectedLangErr.EventDate" placeholder="EventDate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventEndTime: </label>
+                      <input [(ngModel)]="selectedLangErr.EventEndTime" placeholder="EventEndTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventName: </label>
+                      <input [(ngModel)]="selectedLangErr.EventName" placeholder="EventName"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventStartTime: </label>
+                      <input [(ngModel)]="selectedLangErr.EventStartTime" placeholder="EventStartTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>EventUpdate: </label>
+                      <input [(ngModel)]="selectedLangErr.EventUpdate" placeholder="EventUpdate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>FromToSame: </label>
+                      <input [(ngModel)]="selectedLangErr.FromToSame" placeholder="FromToSame"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>FaceBook: </label>
+                      <input [(ngModel)]="selectedLangErr.FaceBook" placeholder="FaceBook"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>GooglePlus: </label>
+                      <input [(ngModel)]="selectedLangErr.GooglePlus" placeholder="GooglePlus"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>LateBeforeEarly: </label>
+                      <input [(ngModel)]="selectedLangErr.LateBeforeEarly" placeholder="LateBeforeEarly"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>MapAddress: </label>
+                      <input [(ngModel)]="selectedLangErr.MapAddress" placeholder="MapAddress"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>MailPrefs: </label>
+                      <input [(ngModel)]="selectedLangErr.MailPrefs" placeholder="MailPrefs"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>NameFour: </label>
+                      <input [(ngModel)]="selectedLangErr.NameFour" placeholder="NameFour"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>NameFull: </label>
+                      <input [(ngModel)]="selectedLangErr.NameFull" placeholder="NameFull"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Package: </label>
+                      <input [(ngModel)]="selectedLangErr.Package" placeholder="Package"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordSix: </label>
+                      <input [(ngModel)]="selectedLangErr.PasswordSix" placeholder="PasswordSix"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordConfirm: </label>
+                      <input [(ngModel)]="selectedLangErr.PasswordConfirm" placeholder="PasswordConfirm"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PasswordMisMatch: </label>
+                      <input [(ngModel)]="selectedLangErr.PasswordMisMatch" placeholder="PasswordMisMatch"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Phone: </label>
+                      <input [(ngModel)]="selectedLangErr.Phone" placeholder="Phone"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PostUrl: </label>
+                      <input [(ngModel)]="selectedLangErr.PostUrl" placeholder="PostUrl"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>PostText: </label>
+                      <input [(ngModel)]="selectedLangErr.PostText" placeholder="PostText"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>RecordNotSaved: </label>
+                      <input [(ngModel)]="selectedLangErr.RecordNotSaved" placeholder="RecordNotSaved"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>RideShortest: </label>
+                      <input [(ngModel)]="selectedLangErr.RideShortest" placeholder="RideShortest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Route: </label>
+                      <input [(ngModel)]="selectedLangErr.Route" placeholder="Route"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SearchTerms: </label>
+                      <input [(ngModel)]="selectedLangErr.SearchTerms" placeholder="SearchTerms"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectDate: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectDate" placeholder="SelectDate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectDest: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectDest" placeholder="SelectDest"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectEarly: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectEarly" placeholder="SelectEarly"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectEndTime: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectEndTime" placeholder="SelectEndTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectLate: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectLate" placeholder="SelectLate"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectStart: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectStart" placeholder="SelectStart"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SelectStartTime: </label>
+                      <input [(ngModel)]="selectedLangErr.SelectStartTime" placeholder="SelectStartTime"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>ShareLocation: </label>
+                      <input [(ngModel)]="selectedLangErr.ShareLocation" placeholder="ShareLocation"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>SiteName: </label>
+                      <input [(ngModel)]="selectedLangErr.SiteName" placeholder="SiteName"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Title: </label>
+                      <input [(ngModel)]="selectedLangErr.Title" placeholder="Title"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Twitter: </label>
+                      <input [(ngModel)]="selectedLangErr.Twitter" placeholder="Twitter"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UrlInvalid: </label>
+                      <input [(ngModel)]="selectedLangErr.UrlInvalid" placeholder="UrlInvalid"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UserNameExists: </label>
+                      <input [(ngModel)]="selectedLangErr.UserNameExists" placeholder="UserNameExists"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>UserNameSix: </label>
+                      <input [(ngModel)]="selectedLangErr.UserNameSix" placeholder="UserNameSix"/>
+              </fieldset>
+               <fieldset class="form-group  col-md-12">
+                      <label>Website: </label>
+                      <input [(ngModel)]="selectedLangErr.Website" placeholder="Website"/>
+              </fieldset>
+		      <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+          <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+<div *ngIf!="selectedLangErr">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search by Id or Language Code:</label> <input #langerrSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(langerrSearch.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+       <tr *ngFor="let langerr of langerrs" (click)="onSelect(langerr)"
+      [class.selected]="langerr === selectedLangerr">
+<div *ngIf!="appservice.admin">
+          <td class="DFC"><b>{{langerr.Id}}</b></td>
+          <td class="DFC">{{langerr.DFC}}</td> 
+          <td class="DFC">{{langerr.DLC}}</td> 
+          <td class="DFC">{{langerr.User}}</td> 
+          <td class="DFC">{{langerr.Lang}}</td>  
+          <td class="DFC">{{langerr.CellCodeInvalid}}</td> 
+          <td class="DFC">{{langerr.CellCodeNoMatch}}</td> 
+	</div>
+        <div *ngIf="appservice.admin">
+          <td class="DFC"><b>{{langerr.Id}}</b></td>
+          <td class="DFC">{{langerr.Lang}}</td>  
+          <td class="DFC">{{langerr.CellCodeInvalid}}</td> 
+          <td class="DFC">{{langerr.CellCodeNoMatch}}</td> 
+          <td class="DFC">{{langerr.CellProvider}}</td> 
+          <td class="DFC">{{langerr.DeleteConflictMessage}}</td> 
+          <td class="DFC">{{langerr.DriveLongest}}</td> 
+          <td class="DFC">{{langerr.EnterDescrip}}</td> S
+          <td class="DFC">{{langerr.EnterDomain}}</td> 
+          <td class="DFC">{{langerr.EmailDup}}</td> 
+          <td class="DFC">{{langerr.EmailRequired}}</td> 
+          <td class="DFC">{{langerr.EmailReset}}</td> 
+          <td class="DFC">{{langerr.EventDate}}</td> 
+          <td class="DFC">{{langerr.EventEndTime}}</td> 
+          <td class="DFC">{{langerr.EventName}}</td> 
+          <td class="DFC">{{langerr.EventStartTime}}</td> 
+          <td class="DFC">{{langerr.EventUpdate}}</td>  
+          <td class="DFC">{{langerr.FromToSame}}</td> 
+          <td class="DFC">{{langerr.FaceBook}}</td> 
+          <td class="DFC">{{langerr.GooglePlus}}</td> 
+          <td class="DFC">{{langerr.LateBeforeEarly}}</td> 
+          <td class="DFC">{{langerr.MapAddress}}</td> 
+          <td class="DFC">{{langerr.MailPrefs}}</td> 
+          <td class="DFC">{{langerr.NameFour}}</td> 
+          <td class="DFC">{{langerr.NameFull}}</td> 
+          <td class="DFC">{{langerr.PasswordSix}}</td> 
+          <td class="DFC">{{langerr.PasswordConfirm}}</td> 
+          <td class="DFC">{{langerr.PasswordMisMatch}}</td> 
+          <td class="DFC">{{langerr.Phone}}</td> 
+          <td class="DFC">{{langerr.PostUrl}}</td> 
+          <td class="DFC">{{langerr.PostText}}</td> 
+          <td class="DFC">{{langerr.RecordNotSaved}}</td> 
+          <td class="DFC">{{langerr.RideShortest}}</td> 
+          <td class="DFC">{{langerr.Route}}</td> 
+          <td class="DFC">{{langerr.SearchTerms}}</td> 
+          <td class="DFC">{{langerr.SelectDate}}</td> 
+          <td class="DFC">{{langerr.SelectDest}}</td> 
+          <td class="DFC">{{langerr.SelectEarly}}</td> 
+          <td class="DFC">{{langerr.SelectEndTime}}</td> 
+          <td class="DFC">{{langerr.SelectLate}}</td> 
+          <td class="DFC">{{langerr.SelectStart}}</td> 
+          <td class="DFC">{{langerr.SelectStartTime}}</td> 
+          <td class="DFC">{{langerr.ShareLocation}}</td> 
+          <td class="DFC">{{langerr.SiteName}}</td> 
+          <td class="DFC">{{langerr.Title}}</td> 
+          <td class="DFC">{{langerr.Twitter}}</td> 
+          <td class="DFC">{{langerr.UrlInvalid}}</td> 
+          <td class="DFC">{{langerr.UserNameExists}}</td> 
+          <td class="DFC">{{langerr.UserNameSix}}</td> 
+          <td class="DFC">{{langerr.Website}}</td>  
+	 </div>
+	<td><button class="btn-xs btn-danger" (click)="delete(event); $event.stopPropagation()">x</button></td>
+</tr></tbody></table>
+</div>
+</div></div></div></div>
+
+
+
+
+
+

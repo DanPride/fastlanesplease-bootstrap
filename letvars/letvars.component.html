@@ -1,0 +1,58 @@
+<div class="container">	
+<div *ngIf="selectedLetvar" class="selectedLetvar">
+    <div class="row">
+			<div class="card text-xs-center">
+				<div class="card-block">
+					<div class="card-header">
+        <fieldset class="form-group  col-md-12">
+          {{selectedLetvar.letvar}}
+            </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLetvar.Id}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLetvar.DFC | date}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLetvar.DLC | date}} 
+        </fieldset>
+        <fieldset class="form-group col-md-3">
+                {{selectedLetvar.User}}
+        </fieldset>
+        <fieldset class="form-group  col-md-12">
+            <label>Var: </label>
+            <input [(ngModel)]="selectedLetvar.Var" placeholder="Var"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>Def: </label>
+        <input [(ngModel)]="selectedLetvar.Def" placeholder="Def"/>
+      </fieldset>
+ <button class="btn btn-warning"  (click)="onDeSelect()">View letvar</button>
+ <button class="btn btn-success" (click)="onDeSelect()">View List</button>
+  </div></div></div></div></div>
+
+<div *ngIf!="selectedLetvar">
+  <div class="row">
+  <div class="card text-xs-center">
+        <div class="card-block">
+            <label>Search by Var or Description:</label><input #letvarSearch (input)="term$.next($event.target.value)" placeholder="Enter Id or letvar" />
+             <button class="btn btn-danger" (click)="add(letvarSearch.value)"> Add </button>
+      </div>
+   <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+  <tr *ngFor="let letvar of letvars" (click)="onSelect(letvar)"
+      [class.selected]="letvar === selectedLetvar" class="list-group-item">
+        <div *ngIf!="appservice.admin">
+            <td class="Id"><b>{{letvar.Id}}</b></td>
+            <td class="Id"><b>{{letvar.Var}}</b></td>
+            <td class="User">{{letvar.Def}}</td>
+            <td class="DFC">{{letvar.DFC}}<br>{{letvar.DLC}}</td>
+            <td class="Did">{{letvar.User}}</td>
+          <td><button class="btn-xs btn-danger"
+                        (click)="delete(letvar); $event.stopPropagation()">x</button></td>
+        </div>
+      </tr>
+  </tbody></table>
+        </div>
+</div></div></div></div>

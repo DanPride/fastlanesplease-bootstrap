@@ -1,0 +1,85 @@
+	<nav class="navbar navbar-light bg-faded navbar-fixed-top">
+        <button class="navbar-toggler hidden-sm-up" type="button" data-toggle="collapse" data-target="#startupNavbar">
+            <img src="https://solomonschariot.com/images/_sysimages/chariote.jpg" alt="logo" height="40">
+        </button>
+	    <a class="navbar-brand" href="logout.php"><img src="https://solomonschariot.com/images/_sysimages/chariote.jpg" alt="logo" height="40"></a>
+	     <div class="collapse navbar-toggleable-xs" id="startupNavbar">
+            <ul class="nav navbar-nav pull-sm-right">
+                <li class="nav-item active">
+                        <a class="nav-link" href="profile.php">Profile</a>
+                </li>
+                <li class="nav-item active">
+                        <a class="nav-link" href="places.php">Places</a>
+                </li>
+                <li class="nav-item active">
+                        <a class="nav-link" href="places.php">Places</a>
+                </li>
+                <li class="nav-item">
+                        <a class="btn btn-primary" href="page"></a>
+                </li>
+	          </ul>
+	    </div>
+	    </nav>
+	    <div class="container"> 
+      <div class="row">
+        <div class="card text-xs-center">
+          <div class="card-block">   
+            <button class="btn btn-success" (click)="admin=onClickAdmin(admin)" name="adminor">Show Admin</button>
+            <button class="btn btn-success" (click)="showbuttons=onClick(showbuttons)" name="mybut">Show Buttons</button>
+               <div *ngIf!="showbuttons">
+                 	<fieldset class="form-group">
+                      <form #formRef="ngForm">
+                        {{admin}}
+                            <select name="pages" class="form-control" [ngModel]="pages[5]" id="pages" (change)="onChange($event.target.value)">
+                                <option 
+                                    *ngFor="let page of pages"
+                                    [value]="page" >
+                                      {{page}}
+                                </option>
+                            </select>
+                      </form>
+                 	</fieldset>
+                </div>
+                
+                <div *ngIf="showbuttons">
+                    <p><a routerLink="events"   routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }" class="btn btn-success">Events</a>
+                   <a routerLink="runs"  routerLinkActive="active" class="btn btn-success">Runs</a>
+                    <a routerLink="rides"  routerLinkActive="active" class="btn btn-success">Rides</a>
+                    <a routerLink="drives" routerLinkActive="active" class="btn btn-success">Drives</a>
+                    <a routerLink="places"  routerLinkActive="active" class="btn btn-success">Places</a>
+                    <a routerLink="users"  routerLinkActive="active" class="btn btn-primary">Users</a>
+                    <a routerLink="people"  routerLinkActive="active" class="btn btn-success">People</a>
+                    <a routerLink="comments" routerLinkActive="active" class="btn btn-success">Comments</a>
+                    <a routerLink="outputs"  routerLinkActive="active" class="btn btn-success">Outputs</a></p>
+                    
+                    <p> <a routerLink="sched86s"  routerLinkActive="active" class="btn btn-success">Sched86s</a>
+                    <a routerLink="schedules"  routerLinkActive="active" class="btn btn-success">Schedules</a>
+                    <a routerLink="domains" routerLinkActive="active" class="btn btn-success">Domains</a>
+                    <a routerLink="letters"  routerLinkActive="active" class="btn btn-success">Letters</a>
+                    <a routerLink="letvars"  routerLinkActive="active" class="btn btn-success">Letter Vars</a>
+                    <a routerLink="lettexts"  routerLinkActive="active" class="btn btn-success">Letters Text</a>
+                    <a routerLink="logs"  routerLinkActive="active" class="btn btn-success">Logs</a>
+                    <a routerLink="zeros"  routerLinkActive="active" class="btn btn-success">Zeros</a>
+                    <a routerLink="days"  routerLinkActive="active" class="btn btn-success">Days</a></p>
+                 
+                 
+                   <p> <a routerLink="langs" routerLinkActive="active" class="btn btn-success">Langs0</a>
+                    <a routerLink="langs1" routerLinkActive="active" class="btn btn-success">Langs1</a>
+                    <a routerLink="langs2" routerLinkActive="active" class="btn btn-success">Langs2</a>
+                    <a routerLink="langs3" routerLinkActive="active" class="btn btn-success">Langs3</a>
+                    <a routerLink="langs4" routerLinkActive="active" class="btn btn-success">Langs4</a>                     
+                    <a routerLink="langerrs" routerLinkActive="active" class="btn btn-success">LangErrs</a>
+                    <a routerLink="iso3166s"  routerLinkActive="active" class="btn btn-success">iso3166s</a> 
+                    <a routerLink="iso639s"  routerLinkActive="active" class="btn btn-success">iso639s</a></p>
+
+                 
+                    <a routerLink="invoices"  routerLinkActive="active" class="btn btn-success">Invoices</a>
+                    <a routerLink="lineitems"  routerLinkActive="active" class="btn btn-success">LineItems</a>
+                    <a routerLink="posts"  routerLinkActive="active" class="btn btn-success">Posts</a>
+                    <a routerLink="feeds"  routerLinkActive="active" class="btn btn-success">Feeds</a>
+                    <a routerLink="photos"  routerLinkActive="active" class="btn btn-success">Photos</a>
+                    <a routerLink="popups"  routerLinkActive="active" class="btn btn-success">Popups</a>
+                    <a routerLink="bugs" routerLinkActive="active" class="btn btn-success">Bugs</a>
+          </div></div></div></div></div>
+  
+<router-outlet></router-outlet>

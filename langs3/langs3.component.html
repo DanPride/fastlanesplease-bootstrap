@@ -1,0 +1,171 @@
+<div class="container">	
+    <div *ngIf="selectedLang3" class="selectedLang3">
+       <div class="row">
+        <div class="card text-xs-center">
+             <div class="card-block">
+                <div class="card-header">
+                <fieldset class="form-group  col-md-12">
+                  {{selectedLang3.Lang}}
+                    </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLang3.Id}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLang3.DFC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLang3.DLC | date}} 
+                </fieldset>
+                <fieldset class="form-group col-md-3">
+                        {{selectedLang3.User}}
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>Lang: </label>
+                      <input [(ngModel)]="selectedLang3.Lang" placeholder="Lang"/>
+                </fieldset>
+					      <fieldset class="form-group  col-md-12">
+                      <label>CheckValCode: </label>
+                      <input [(ngModel)]="selectedLang3.CheckValCode" placeholder="CheckValCode"/>
+                </fieldset>
+                    <fieldset class="form-group  col-md-12">
+                      <label>CommuterSelected: </label>
+                      <input [(ngModel)]="selectedLang3.CommuterSelected" placeholder="CommuterSelected"/>
+                </fieldset>
+                <fieldset class="form-group  col-md-12">
+                      <label>DomainImageHeader: </label>
+                      <input [(ngModel)]="selectedLang3.DomainImageHeader" placeholder="DomainImageHeader"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>EmailForPass: </label>
+                      <input [(ngModel)]="selectedLang3.EmailForPass" placeholder="EmailForPass"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>EventImageHeader: </label>
+                      <input [(ngModel)]="selectedLang3.EventImageHeader" placeholder="EventImageHeader"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>EventSearchOnly: </label>
+                      <input [(ngModel)]="selectedLang3.EventSearchOnly" placeholder="EventSearchOnly"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>FeedbackGoodGreat: </label>
+                      <input [(ngModel)]="selectedLang3.FeedbackGoodGreat" placeholder="FeedbackGoodGreat"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>ImageHeader: </label>
+                      <input [(ngModel)]="selectedLang3.ImageHeader" placeholder="ImageHeader"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>MassTransit: </label>
+                      <input [(ngModel)]="selectedLang3.MassTransit" placeholder="MassTransit"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>NoHomeText: </label>
+                      <input [(ngModel)]="selectedLang3.NoHomeText" placeholder="NoHomeText"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>PhoneTextError: </label>
+                      <input [(ngModel)]="selectedLang3.PhoneTextError" placeholder="PhoneTextError"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>PleaseClickLink: </label>
+                      <input [(ngModel)]="selectedLang3.PleaseClickLink" placeholder="PleaseClickLink"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>PubPriv: </label>
+                      <input [(ngModel)]="selectedLang3.PubPriv" placeholder="PubPriv"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>RegisterTextingHeader: </label>
+                      <input [(ngModel)]="selectedLang3.RegisterTextingHeader" placeholder="RegisterTextingHeader"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>RegNotConfirmed: </label>
+                      <input [(ngModel)]="selectedLang3.RegNotConfirmed" placeholder="RegNotConfirmed"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>RunColors: </label>
+                      <input [(ngModel)]="selectedLang3.RunColors" placeholder="RunColors"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>EventColors: </label>
+                      <input [(ngModel)]="selectedLang3.EventColors" placeholder="EventColors"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>SampleComment: </label>
+                      <input [(ngModel)]="selectedLang3.SampleComment" placeholder="SampleComment"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>TextingOffFooter: </label>
+                      <input [(ngModel)]="selectedLang3.TextingOffFooter" placeholder="TextingOffFooter"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>TextingOnFooter: </label>
+                      <input [(ngModel)]="selectedLang3.TextingOnFooter" placeholder="TextingOnFooter"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>UploadFormatMessage: </label>
+                      <input [(ngModel)]="selectedLang3.UploadFormatMessage" placeholder="UploadFormatMessage"/>
+                </fieldset>
+                   <fieldset class="form-group  col-md-12">
+                      <label>UploadTabReturn: </label>
+                      <input [(ngModel)]="selectedLang3.UploadTabReturn" placeholder="UploadTabReturn"/>
+                </fieldset>
+			
+		      <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+          <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+<div *ngIf!="selectedLang3">
+  <div class="row">
+    <div class="card text-xs-center">
+          <div class="card-block">
+              <label>Search Events by Id or Lang:</label> <input #lang3Search (input)="term$.next($event.target.value)" placeholder="Enter Id or Text" />
+              <button class="btn btn-danger" (click)="add(lang3Search.value)"> Add </button>
+          </div>
+          <div class="table-responsive">
+                <table class="table">
+                    <tbody>
+  <tr *ngFor="let lang3 of langs3" (click)="onSelect(lang3)"
+      [class.selected]="lang3 === selectedLang3">     
+<div *ngIf!="appservice.admin">
+<td class="DFC"><b>{{lang3.Id}}</b></td>
+<td class="DFC">{{lang3.DFC}}</td>  
+<td class="DFC">{{lang3.DLC}}</td> 
+<td class="DFC">{{lang3.User}}</td> 
+<td class="DFC">{{lang3.Lang}}</td> 
+<td class="DFC">{{lang3.CheckValCode}}</td> 
+<td class="DFC">{{lang3.CommuterSelected}}</td> 
+</div><div *ngIf="appservice.admin">
+<td class="DFC"><b>{{lang3.Id}}</b></td>
+<td class="DFC">{{lang3.DFC}}</td>  
+<td class="DFC">{{lang3.DLC}}</td> 
+<td class="DFC">{{lang3.User}}</td> 
+<td class="DFC">{{lang3.Lang}}</td> 
+<td class="DFC">{{lang3.CheckValCode}}</td> 
+<td class="DFC">{{lang3.CommuterSelected}}</td>  
+<td class="DFC">{{lang3.DomainImageHeader}}</td> 
+<td class="DFC">{{lang3.EmailForPass}}</td> 
+<td class="DFC">{{lang3.EventImageHeader}}</td> 
+<td class="DFC">{{lang3.EventSearchOnly}}</td> 
+<td class="DFC">{{lang3.FeedbackGoodGreat}}</td> 
+<td class="DFC">{{lang3.ImageHeader}}</td> 
+<td class="DFC">{{lang3.MassTransit}}</td>  
+<td class="DFC">{{lang3.NoHomeText}}</td> 
+<td class="DFC">{{lang3.PhoneTextError}}</td> 
+<td class="DFC">{{lang3.PleaseClickLink}}</td> 
+<td class="DFC">{{lang3.PubPriv}}</td> 
+<td class="DFC">{{lang3.RegisterTextingHeader}}</td> 
+<td class="DFC">{{lang3.RegNotConfirmed}}</td> 
+<td class="DFC">{{lang3.RunColors}}</td> 
+<td class="DFC">{{lang3.EventColors}}</td> 
+<td class="DFC">{{lang3.SampleComment}}</td> 
+<td class="DFC">{{lang3.TextingOffFooter}}</td> 
+<td class="DFC">{{lang3.TextingOnFooter}}</td> 
+<td class="DFC">{{lang3.UploadFormatMessage}}</td> 
+<td class="DFC">{{lang3.UploadTabReturn}}</td> 
+	 </div>
+	<td><button class="btn-xs btn-danger" (click)="delete(event); $event.stopPropagation()">x</button></td>
+</tr></tbody></table>
+</div>
+</div></div></div></div>

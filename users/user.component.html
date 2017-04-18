@@ -1,0 +1,181 @@
+<div class="container">	
+    <div *ngIf="user" class="selectedEvent">
+       <div class="row">
+		    	<div class="card text-xs-center">
+			      	<div class="card-block">
+				      	<div class="card-header">
+                    {{user.UserName}}<br>
+                    {{user.Id}} {{user.DFC | date}} {{user.DLC | date}} {{user.User}}
+      </div>
+       <div *ngIf!="user" class="selectedEvent">
+      <fieldset class="form-group">
+        <label>Lang: </label>
+        <input [(ngModel)]="user.Lang" placeholder="Lang"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Acct: </label>
+        <input [(ngModel)]="user.Acct" placeholder="Acct"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Country: </label>
+        <input [(ngModel)]="user.Country" placeholder="Country"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Did: </label>
+        <input [(ngModel)]="user.Did" placeholder="Did"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Admin: </label>
+        <input [(ngModel)]="user.Admin" placeholder="Admin"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>LangEd: </label>
+        <input [(ngModel)]="user.LangEd" placeholder="LangEd"/>
+        </fieldset>
+      <fieldset class="form-group">
+        <label>Sales: </label>
+        <input [(ngModel)]="user.Sales" placeholder="Sales"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>UserName: </label>
+        <input [(ngModel)]="user.UserName" placeholder="UserName"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>Pass: </label>
+        <input [(ngModel)]="user.Pass" placeholder="Pass"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Email: </label>
+        <input [(ngModel)]="user.Email" placeholder="Email"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>Agent: </label>
+        <input [(ngModel)]="user.Agent" placeholder="Agent"/>
+     </fieldset>
+      <fieldset class="form-group">
+        <label>Source: </label>
+        <input [(ngModel)]="user.Source" placeholder="Source"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>IP: </label>
+        <input [(ngModel)]="user.IP" placeholder="IP"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label for="followups">Followups: </label>
+        <input [(ngModel)]="user.Followups" placeholder="Followups" id="followups" />
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveMax: </label>
+        <input [(ngModel)]="user.DriveMax" placeholder="DriveMax"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveMin: </label>
+        <input [(ngModel)]="user.DriveMin" placeholder="DriveMin"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>DriveRate: </label>
+        <input [(ngModel)]="user.DriveRate" placeholder="DriveRate"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>DriveFee: </label>
+        <input [(ngModel)]="user.DriveFee" placeholder="DriveFee"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MapPrefs: </label>
+        <input [(ngModel)]="user.MapPrefs" placeholder="MapPrefs"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MailPrefs: </label>
+        <input [(ngModel)]="user.MailPrefs" placeholder="MailPrefs"/>
+      </fieldset>
+      <fieldset class="form-group">
+        <label>MatchPrefs: </label>
+        <input [(ngModel)]="user.MatchPrefs" placeholder="MatchPrefs"/>
+       </fieldset>
+      <fieldset class="form-group">
+        <label>LangBar: </label>
+        <input [(ngModel)]="user.LangBar" placeholder="LangBar"/>
+     </fieldset>
+      <button class="btn btn-warning" (click)="onDeSelect()">Back</button>
+      <button class="btn btn-success" (click)="onDeSelect()">Save</button>
+</div></div></div></div></div>
+
+ <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Drives</th></tr>
+            <tr *ngFor="let drive of drives" (click)="onSelect(drive)"
+            [class.selected]="drive === selectedDrive" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="Id"><b>{{drive.Id}}</b> {{drive.DriveFromName}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+
+ <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Rides</th></tr>
+            <tr *ngFor="let ride of rides" (click)="onSelect(drive)"
+            [class.selected]="ride === selectedRide" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="Id"><b>{{ride.Id}}</b> {{ride.RideFromName}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div>
+           
+  <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Runs</th></tr>
+            <tr *ngFor="let run of runs" (click)="onSelect(run)"
+            [class.selected]="run === selectedRun" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="Id"><b>{{run.Id}}</b> {{run.DriveFromName}}{{run.DriveToName}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div>  
+  <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Places</th></tr>
+            <tr *ngFor="let place of places" (click)="onSelect(place)"
+            [class.selected]="place === selectedPlace" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="name"><b>{{place.Id}}</b> {{place.Name}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div> 
+  <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Comments</th></tr>
+            <tr *ngFor="let comment of comments" (click)="onSelect(comment)"
+            [class.selected]="comment === selectedComment" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="name"><b>{{comment.Id}}</b> {{comment.DriveToName}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+   <div class="table-responsive floattable table">
+      <table class="table">
+          <tbody><tr><th>Outputs</th></tr>
+            <tr *ngFor="let output of outputs" (click)="onSelect(output)"
+            [class.selected]="output === selectedOutput" class="list-group-item">
+              <div *ngIf!="appservice.admin">
+                  <td class="name"><b>{{output.Id}}</b> {{output.OutputType}}</td>
+              </div>
+            </tr>
+          </tbody>
+        </table>
+  </div>   
+           
+            
+            
+            
+            </div>
